@@ -523,6 +523,26 @@ function iconForNhom(n){
   const map = {"Zalo học sinh":"💬","Zalo phụ huynh":"👪","Kích hoạt khóa học":"🔑","Hỏi đáp trợ giảng":"❓","Livestream":"🎥"};
   return map[n] || "🔗";
 }
+/* Tự nhận diện mọi kiểu link YouTube (dán nguyên link chia sẻ cũng được, không bắt buộc /embed/ nữa):
+   youtu.be/<id> | youtube.com/watch?v=<id> | youtube.com/shorts/<id> | youtube.com/embed/<id> */
+function toYoutubeEmbed(url){
+  const raw = (url||'').trim();
+  if(!raw) return raw;
+  try{
+    const u = new URL(raw);
+    const host = u.hostname.replace(/^www\.|^m\./,'');
+    let id = '';
+    if(host === 'youtu.be'){
+      id = u.pathname.slice(1);
+    }else if(host === 'youtube.com'){
+      if(u.pathname === '/watch') id = u.searchParams.get('v') || '';
+      else if(u.pathname.startsWith('/embed/')) id = u.pathname.split('/embed/')[1];
+      else if(u.pathname.startsWith('/shorts/')) id = u.pathname.split('/shorts/')[1];
+    }
+    id = (id||'').split(/[?&]/)[0];
+    return id ? `https://www.youtube.com/embed/${id}` : raw;
+  }catch(e){ return raw; }
+}
 
 function fetchTab(tabName){
   return new Promise((resolve)=>{
@@ -585,8 +605,11 @@ function renderVideos(){
   if(!DATA.video.length){ grid.innerHTML = `<div class="tkb-empty" style="grid-column:1/-1;">Chưa có video hướng dẫn nào.</div>`; return; }
   grid.innerHTML = DATA.video.map(v=>`
     <div class="card video-card">
-      <div class="video-frame"><iframe src="${v.video_url}" title="${v.tieu_de}" allowfullscreen loading="lazy"></iframe></div>
-      <div class="video-body"><h4>${v.tieu_de||''}</h4><p>${v.mo_ta||''}</p></div>
+      <div class="video-frame"><iframe src="${toYoutubeEmbed(v.video_url)}" title="${v.tieu_de}" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-body">
+        <h4>${v.tieu_de||''}</h4><p>${v.mo_ta||''}</p>
+        <a class="faq-link" style="margin-top:10px;" href="${v.video_url}" target="_blank" rel="noopener">↗ Video không hiện? Mở trong tab mới</a>
+      </div>
     </div>`).join('');
 }
 
@@ -599,16 +622,17 @@ function renderFaq(){
     listEl.innerHTML = `<div class="tkb-empty">Chưa có nội dung xử lý sự cố.</div>`;
     return;
   }
-  // gom theo muc_id, giữ thứ tự theo muc_thu_tu
+  // gom theo muc_id, thứ tự MỤC = thứ tự xuất hiện đầu tiên của mục đó từ trên xuống trong Sheet
+  // (không dùng cột muc_thu_tu nữa vì rất dễ bị nhầm với cột thu_tu của từng dòng con)
   const mucMap = new Map();
   DATA.hoTro.forEach(r=>{
     if(!mucMap.has(r.muc_id)){
-      mucMap.set(r.muc_id, { id:r.muc_id, tieu_de:r.muc_tieu_de, mau:r.muc_mau, thu_tu:parseFloat(r.muc_thu_tu)||0, rows:[] });
+      mucMap.set(r.muc_id, { id:r.muc_id, tieu_de:r.muc_tieu_de, mau:r.muc_mau, rows:[] });
     }
     mucMap.get(r.muc_id).rows.push(r);
   });
-  const mucs = [...mucMap.values()].sort((a,b)=>a.thu_tu-b.thu_tu);
-  mucs.forEach(m=> m.rows.sort(sortByThuTu));
+  const mucs = [...mucMap.values()]; // Map giữ nguyên thứ tự chèn = thứ tự xuất hiện trong Sheet
+  mucs.forEach((m,i)=> { m.thu_tu = i+1; m.rows.sort(sortByThuTu); });
 
   jumpEl.innerHTML = mucs.map(m=>`<a href="#faq-muc-${m.id}">${m.thu_tu}. ${m.tieu_de}</a>`).join('');
 
