@@ -424,7 +424,10 @@ const CONFIG = {
 };
 
 function sheetCsvUrl(tabName){
-  return `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+  // &_= là cache-buster: đổi mỗi lần tải trang để Google luôn trả bản dữ liệu mới nhất,
+  // không bị dính cache cũ vài phút sau khi Sheet vừa được sửa.
+  const bust = Date.now();
+  return `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&_=${bust}`;
 }
 
 /* Dữ liệu mẫu — chỉ dùng để demo khi CHƯA gắn Google Sheet thật,
