@@ -11,7 +11,7 @@
 <style>
 
   /* ============================================================
-     1. CẤU HÌNH MÀU / FONT (token hệ thống — không cần sửa)
+     1. TOKEN HỆ THỐNG (màu / font) — không cần sửa
      ============================================================ */
   :root{
     --green-900:#0d3d27;
@@ -32,6 +32,14 @@
     --radius-lg:20px;
     --radius-md:14px;
     --radius-sm:10px;
+
+    /* màu mục Xử lý sự cố — có thể dùng lại cho mục mới */
+    --c-xanh_duong:#2f6fed;
+    --c-cam:#f2994a;
+    --c-xanh_la:#1f8a5c;
+    --c-do:#c0392b;
+    --c-tim:#7c4dbd;
+    --c-xanh_ngoc:#17a398;
   }
 
   *{box-sizing:border-box;}
@@ -68,18 +76,12 @@
   /* ============================================================
      2. TOP BAR + HEADER
      ============================================================ */
-  .topbar{
-    background:var(--green-900);color:#fff;font-size:13px;
-    padding:9px 0;
-  }
+  .topbar{background:var(--green-900);color:#fff;font-size:13px;padding:9px 0;}
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
   .topbar a{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-weight:600;}
   .topbar .brand-label{opacity:.8;}
 
-  header.masthead{
-    display:flex;align-items:center;gap:14px;padding:16px 0;
-    border-bottom:1px solid var(--border);
-  }
+  header.masthead{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .logo-mark{width:42px;height:42px;flex-shrink:0;}
   .logo-word{font-family:'Be Vietnam Pro';font-weight:800;font-size:19px;color:var(--green-900);line-height:1;}
@@ -91,8 +93,7 @@
      ============================================================ */
   .hero{
     background:radial-gradient(120% 140% at 15% 0%, #eef8f1 0%, var(--green-050) 45%, #ffffff 100%);
-    padding:52px 0 44px;
-    border-bottom:1px solid var(--border);
+    padding:52px 0 44px;border-bottom:1px solid var(--border);
   }
   .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;}
   .hero-title{font-size:clamp(28px,4.2vw,44px);line-height:1.12;color:var(--green-900);}
@@ -104,49 +105,32 @@
   .hero-stats{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap;}
   .hero-stat b{display:block;font-size:24px;color:var(--green-700);font-family:'Be Vietnam Pro';font-weight:800;}
   .hero-stat span{font-size:12.5px;color:var(--ink-soft);}
-  .hero-card{
-    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
-    padding:22px;box-shadow:var(--shadow-md);
-  }
+  .hero-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-md);}
   .hero-card h3{font-size:16px;color:var(--green-900);margin-bottom:4px;}
   .hero-card p{margin:0 0 16px;color:var(--ink-soft);font-size:13.5px;}
   .hero-card-list{display:flex;flex-direction:column;gap:10px;}
   .hero-card-row{
     display:flex;justify-content:space-between;align-items:center;
     padding:12px 14px;border-radius:var(--radius-sm);background:var(--green-050);
-    border:1px solid var(--border);font-size:13.5px;
+    border:1px solid var(--border);font-size:13.5px;text-decoration:none;color:inherit;
   }
-  .hero-card-row b{color:var(--green-900);}
-  .pill{
-    font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;
-    background:var(--green-600);color:#fff;
-  }
+  .hero-card-row b{color:var(--green-900);font-weight:600;}
+  .pill{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--green-600);color:#fff;}
   .pill.orange{background:var(--orange);}
   .pill.muted{background:#eef1ee;color:var(--ink-soft);}
 
   /* ============================================================
-     4. BUTTONS / CHIPS
+     4. BUTTONS
      ============================================================ */
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    font-weight:700;font-size:14px;padding:12px 20px;border-radius:var(--radius-sm);
-    border:1px solid transparent;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
-  }
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:12px 20px;border-radius:var(--radius-sm);border:1px solid transparent;text-decoration:none;transition:transform .15s ease;}
   .btn:hover{transform:translateY(-1px);}
   .btn-primary{background:var(--green-700);color:#fff;box-shadow:var(--shadow-sm);}
-  .btn-primary:hover{background:var(--green-800);}
   .btn-outline{background:#fff;color:var(--green-700);border-color:var(--green-600);}
-  .btn-outline:hover{background:var(--green-050);}
-  .btn-block{width:100%;justify-content:center;}
-  .btn[disabled]{opacity:.5;pointer-events:none;}
 
   /* ============================================================
      5. CARD CHUNG
      ============================================================ */
-  .card{
-    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
-    box-shadow:var(--shadow-sm);
-  }
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);}
   .card-pad{padding:26px;}
 
   /* ============================================================
@@ -161,80 +145,80 @@
   .video-body p{margin:0;font-size:12.5px;color:var(--ink-soft);}
 
   /* ============================================================
-     7. TÀI LIỆU
+     7. TÀI LIỆU / LINK ROW DÙNG CHUNG
      ============================================================ */
   .doc-list{display:flex;flex-direction:column;gap:12px;}
-  .doc-row{
-    display:flex;align-items:center;gap:14px;padding:16px 18px;
-    text-decoration:none;color:inherit;
-  }
-  .doc-icon{
-    width:42px;height:42px;border-radius:12px;background:var(--green-100);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-    color:var(--green-700);font-size:18px;
-  }
+  .doc-row{display:flex;align-items:center;gap:14px;padding:16px 18px;text-decoration:none;color:inherit;}
+  .doc-icon{width:42px;height:42px;border-radius:12px;background:var(--green-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green-700);font-size:18px;}
   .doc-text h4{font-size:14.5px;margin:0 0 2px;color:var(--ink);}
   .doc-text p{margin:0;font-size:12.5px;color:var(--ink-soft);}
   .doc-arrow{margin-left:auto;color:var(--green-600);font-size:18px;}
 
   /* ============================================================
-     8. ĐỘI NGŨ HỖ TRỢ
+     8. XỬ LÝ SỰ CỐ (FAQ / sổ tay)
+     ============================================================ */
+  .faq-jump{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
+  .faq-jump a{
+    font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:999px;
+    background:#fff;border:1px solid var(--border);text-decoration:none;color:var(--ink-soft);
+  }
+  .faq-list{display:flex;flex-direction:column;gap:18px;}
+  .faq-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm);scroll-margin-top:20px;}
+  .faq-head{display:flex;align-items:center;gap:12px;padding:14px 20px;color:#fff;}
+  .faq-num{width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+  .faq-head h4{font-size:15px;letter-spacing:.02em;}
+  .faq-body{padding:18px 22px 22px;display:flex;flex-direction:column;gap:8px;background:#fff;}
+  .faq-step{font-weight:700;font-size:13.5px;color:var(--ink);margin-top:8px;}
+  .faq-step:first-child{margin-top:0;}
+  .faq-link{
+    display:flex;align-items:center;gap:8px;font-size:13.5px;padding:9px 12px;border-radius:var(--radius-sm);
+    background:var(--green-050);text-decoration:none;color:var(--green-800);border:1px solid var(--border);width:fit-content;max-width:100%;
+  }
+  .faq-link.disabled{color:var(--ink-soft);background:#f4f4f2;pointer-events:none;}
+  .faq-note{
+    margin-top:8px;padding:12px 14px;border-radius:var(--radius-sm);background:#fff8ec;
+    border:1px solid #f0dfb8;font-size:13px;color:#7a5b12;line-height:1.55;
+  }
+
+  /* ============================================================
+     9. ĐỘI NGŨ HỖ TRỢ
      ============================================================ */
   .team-filter{display:flex;justify-content:center;gap:10px;margin-bottom:22px;}
-  .filter-btn{
-    padding:9px 20px;border-radius:999px;border:1px solid var(--border);
-    background:#fff;font-size:13.5px;font-weight:600;color:var(--ink-soft);
-  }
+  .filter-btn{padding:9px 20px;border-radius:999px;border:1px solid var(--border);background:#fff;font-size:13.5px;font-weight:600;color:var(--ink-soft);}
   .filter-btn.active{background:var(--green-700);border-color:var(--green-700);color:#fff;}
   .team-scroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;}
-  .team-card{
-    min-width:220px;scroll-snap-align:start;text-align:center;padding:24px 18px;flex-shrink:0;
-  }
-  .team-avatar{
-    width:56px;height:56px;border-radius:50%;background:var(--green-100);color:var(--green-700);
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;
-    margin:0 auto 12px;
-  }
+  .team-card{min-width:220px;scroll-snap-align:start;text-align:center;padding:24px 18px;flex-shrink:0;}
+  .team-avatar{width:56px;height:56px;border-radius:50%;background:var(--green-100);color:var(--green-700);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin:0 auto 12px;}
   .team-role{font-size:11.5px;font-weight:700;color:var(--orange-dark);text-transform:uppercase;letter-spacing:.03em;}
   .team-name{font-size:15.5px;font-weight:700;color:var(--green-900);margin:4px 0 2px;}
   .team-sub{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
-  .team-phone{
-    display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
-    background:var(--green-050);border:1px solid var(--border);padding:8px 12px;border-radius:999px;
-  }
+  .team-phone{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;background:var(--green-050);border:1px solid var(--border);padding:8px 12px;border-radius:999px;}
   .scroll-hint{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:6px;}
 
   /* ============================================================
-     9. CHỌN LỚP
+     10. CHỌN LỚP
      ============================================================ */
   .class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-  .class-pick{
-    text-align:left;padding:20px;border-radius:var(--radius-md);border:2px solid var(--border);
-    background:#fff;position:relative;transition:border-color .15s;
-  }
+  .class-pick{text-align:left;padding:20px;border-radius:var(--radius-md);border:2px solid var(--border);background:#fff;position:relative;transition:border-color .15s;}
   .class-pick:hover{border-color:var(--green-500);}
   .class-pick.selected{border-color:var(--green-700);background:var(--green-050);}
-  .class-pick .check{
-    position:absolute;top:-9px;right:14px;width:24px;height:24px;border-radius:50%;
-    background:var(--green-700);color:#fff;display:none;align-items:center;justify-content:center;font-size:13px;
-  }
+  .class-pick .check{position:absolute;top:-9px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--green-700);color:#fff;display:none;align-items:center;justify-content:center;font-size:13px;}
   .class-pick.selected .check{display:flex;}
   .class-pick h4{font-size:17px;color:var(--green-900);margin:0 0 4px;}
   .class-pick p{margin:0;font-size:12.5px;color:var(--ink-soft);}
   .class-pick .status{margin-top:10px;}
 
   /* ============================================================
-     10. TKB
+     11. TKB — DẠNG LƯỚI (Ca × Thứ)
      ============================================================ */
   .tkb-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
   .tkb-head h3{font-size:18px;color:var(--green-900);}
   .tkb-scroll{overflow-x:auto;}
-  table.tkb{border-collapse:collapse;width:100%;min-width:720px;font-size:13px;}
+  table.tkb{border-collapse:collapse;width:100%;min-width:760px;font-size:13px;}
   table.tkb th,table.tkb td{border:1px solid var(--border);padding:10px;text-align:center;vertical-align:top;}
   table.tkb thead th{background:var(--green-050);color:var(--green-900);font-weight:700;font-size:12.5px;}
-  table.tkb th.time-col,table.tkb td.time-col{
-    background:#fbfdfc;font-weight:700;color:var(--green-700);white-space:nowrap;text-align:left;
-  }
+  table.tkb th.ca-col,table.tkb td.ca-col{background:#fbfdfc;font-weight:700;color:var(--green-700);white-space:nowrap;text-align:left;}
+  table.tkb td.ca-col .ca-sub{display:block;font-weight:500;color:var(--ink-soft);font-size:11px;margin-top:2px;}
   table.tkb th.today{background:var(--orange);color:#fff;}
   table.tkb td.today-col{background:#fff6ee;}
   .today-tag{display:block;font-size:10px;font-weight:700;margin-top:2px;}
@@ -242,19 +226,19 @@
   .slot b{display:block;color:var(--green-800);font-size:12.5px;}
   .slot span{color:var(--ink-soft);font-size:11px;}
   .empty-cell{color:#c3cdc7;}
-  .tkb-empty{
-    text-align:center;padding:30px 16px;color:var(--ink-soft);font-size:14px;
-    background:var(--green-050);border-radius:var(--radius-md);border:1px dashed var(--border);
-  }
+  .tkb-empty{text-align:center;padding:30px 16px;color:var(--ink-soft);font-size:14px;background:var(--green-050);border-radius:var(--radius-md);border:1px dashed var(--border);}
 
-  .link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;}
-  .link-card{
-    display:flex;align-items:center;gap:12px;padding:16px;text-decoration:none;color:inherit;
-  }
-  .link-card .doc-icon{background:var(--green-700);color:#fff;}
+  /* Link riêng theo lớp, gộp theo nhóm */
+  .link-groups{margin-top:24px;display:flex;flex-direction:column;gap:18px;}
+  .link-group-title{font-size:12.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;}
+  .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+  .link-card{display:flex;align-items:center;gap:12px;padding:14px 16px;text-decoration:none;color:inherit;}
+  .link-card .doc-icon{background:var(--green-700);color:#fff;font-size:16px;width:38px;height:38px;}
+  .link-card.disabled{opacity:.55;pointer-events:none;}
+  .link-card.disabled .doc-icon{background:#c8d2cc;}
 
   /* ============================================================
-     11. FOOTER
+     12. FOOTER
      ============================================================ */
   footer{background:var(--green-900);color:#cfe4d7;padding:34px 0;margin-top:20px;}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
@@ -264,20 +248,16 @@
   footer a{text-decoration:none;color:#cfe4d7;}
   footer a:hover{color:#fff;}
 
-  .sync-note{
-    display:flex;align-items:center;gap:8px;justify-content:center;margin-top:10px;
-    font-size:12px;color:var(--ink-soft);
-  }
+  .sync-note{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:10px;font-size:12px;color:var(--ink-soft);}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--green-600);flex-shrink:0;}
   .dot.err{background:#d9534f;}
 
   /* ============================================================
-     12. RESPONSIVE
+     13. RESPONSIVE
      ============================================================ */
   @media (max-width:860px){
     .hero-inner{grid-template-columns:1fr;}
     .video-grid{grid-template-columns:1fr;}
-    .link-grid{grid-template-columns:1fr;}
     .hero-stats{gap:20px;}
   }
   @media (max-width:600px){
@@ -319,20 +299,20 @@
     <div>
       <span class="eyebrow">★ Đánh giá năng lực – Tuyển sinh Bộ Công An 2027</span>
       <h1 class="hero-title">Mọi thông tin lớp học <span class="accent">gọn trong một trang</span></h1>
-      <p class="hero-desc">Lịch học theo tuần, đầu mối liên hệ trợ giảng, tài liệu và video hướng dẫn của khóa Xuất phát sớm ĐGNL – luôn cập nhật mới nhất, không cần dò lại tin nhắn Zalo.</p>
+      <p class="hero-desc">Lịch học theo tuần, cách xử lý sự cố ClassIn, đầu mối liên hệ trợ giảng, tài liệu và video hướng dẫn — luôn cập nhật mới nhất, không cần dò lại tin nhắn Zalo.</p>
       <div class="hero-stats" id="heroStats">
         <div class="hero-stat"><b id="statLop">–</b><span>Lớp đang mở</span></div>
         <div class="hero-stat"><b id="statTro">–</b><span>Trợ giảng đồng hành</span></div>
-        <div class="hero-stat"><b>90 phút</b><span>Mỗi buổi Zoom</span></div>
+        <div class="hero-stat"><b>90 phút</b><span>Mỗi buổi học</span></div>
       </div>
     </div>
     <div class="hero-card">
       <h3>Bạn cần gì lúc này?</h3>
       <p>Chọn nhanh việc cần làm, hệ thống dẫn tới đúng phần bên dưới.</p>
       <div class="hero-card-list">
+        <a class="hero-card-row" href="#xu-ly-su-co"><span>🛠 Xử lý sự cố ClassIn / tài khoản</span><span class="pill orange">Đi tới</span></a>
         <a class="hero-card-row" href="#lich-hoc"><span>📅 Xem lịch học tuần này</span><span class="pill">Đi tới</span></a>
-        <a class="hero-card-row" href="#ho-tro"><span>🎧 Liên hệ trợ giảng</span><span class="pill orange">Đi tới</span></a>
-        <a class="hero-card-row" href="#video"><span>▶ Xem video hướng dẫn</span><span class="pill muted">Đi tới</span></a>
+        <a class="hero-card-row" href="#doi-ngu"><span>🎧 Liên hệ trợ giảng</span><span class="pill muted">Đi tới</span></a>
       </div>
     </div>
   </div>
@@ -344,18 +324,31 @@
     <div class="section-head">
       <span class="eyebrow">▶ Bắt đầu ở đây</span>
       <h2 class="section-title">Hướng dẫn nhập học</h2>
-      <p class="section-sub">Xem video để nắm quy trình kích hoạt khóa và tham gia lớp Zoom.</p>
+      <p class="section-sub">Xem video để nắm quy trình kích hoạt khóa và tham gia lớp học.</p>
     </div>
     <div class="video-grid" id="videoGrid"></div>
   </div>
 </section>
 
+<!-- ================= XỬ LÝ SỰ CỐ (SỔ TAY) ================= -->
+<section class="section" id="xu-ly-su-co" style="background:var(--green-050)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">🛠 Tự kiểm tra trước</span>
+      <h2 class="section-title">Xử lý sự cố thường gặp</h2>
+      <p class="section-sub">Tự hỏi: "Mình đang gặp vấn đề gì?" — bấm đúng mục bên dưới để xem cách xử lý.</p>
+    </div>
+    <div class="faq-jump" id="faqJump"></div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
 <!-- ================= TÀI LIỆU ================= -->
-<section class="section" style="background:var(--green-050)">
+<section class="section">
   <div class="wrap" style="max-width:760px">
     <div class="section-head">
       <span class="eyebrow">📖 Tài liệu</span>
-      <h2 class="section-title">Tài liệu hướng dẫn</h2>
+      <h2 class="section-title">Tài liệu tham khảo thêm</h2>
     </div>
     <div class="card doc-list-wrap">
       <div class="doc-list" id="docList"></div>
@@ -364,10 +357,10 @@
 </section>
 
 <!-- ================= ĐỘI NGŨ HỖ TRỢ ================= -->
-<section class="section" id="ho-tro">
+<section class="section" id="doi-ngu" style="background:var(--green-050)">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">🎧 Đội ngũ hỗ trợ</span>
+      <span class="eyebrow">🎧 Vẫn cần người hỗ trợ?</span>
       <h2 class="section-title">Liên hệ trực tiếp qua Zalo</h2>
       <p class="section-sub">Các anh chị trợ giảng phụ trách từng mảng, phản hồi trong giờ hành chính và buổi tối.</p>
     </div>
@@ -378,11 +371,11 @@
 </section>
 
 <!-- ================= CHỌN LỚP + TKB ================= -->
-<section class="section" id="lich-hoc" style="background:var(--green-050)">
+<section class="section" id="lich-hoc">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">🎓 Bạn thuộc lớp nào?</span>
-      <h2 class="section-title">Chọn lớp để xem lịch học & nhóm Zalo</h2>
+      <h2 class="section-title">Chọn lớp để xem lịch học & nhóm liên hệ</h2>
     </div>
     <div class="class-grid" id="classGrid"></div>
 
@@ -396,7 +389,7 @@
       </div>
       <div class="tkb-empty" id="tkbEmpty" style="display:none;"></div>
 
-      <div class="link-grid" id="classLinkGrid"></div>
+      <div class="link-groups" id="classLinkGroups"></div>
     </div>
   </div>
 </section>
@@ -418,15 +411,16 @@
 /* ================================================================
    ============  CẤU HÌNH DỮ LIỆU — SỬA DUY NHẤT Ở ĐÂY  ============
    ================================================================
-   1. Tạo 1 Google Sheet, tạo đủ 5 tab tên chính xác:
-      Lop | TKB | TroGiang | Video | TaiLieu
+   1. Tạo 1 Google Sheet (khuyên dùng: import file mau-du-lieu-HSA.xlsx)
+      với đủ 7 tab tên chính xác:
+      Lop | LopLink | TKB | TroGiang | Video | TaiLieu | HoTro
    2. Share > General access > "Anyone with the link" > Viewer
    3. Copy Sheet ID trong URL (đoạn giữa /d/ và /edit) và dán vào bên dưới.
    Xem hướng dẫn đầy đủ trong file HUONG-DAN-SU-DUNG.md
 ================================================================= */
 const CONFIG = {
   SHEET_ID: "1HLEZGgQ7CyEmWyq39VCUfj8ifOsy0GozNrirGjF8rX8", // <-- thay bằng Sheet ID thật của bạn
-  TABS: { lop: "Lop", tkb: "TKB", troGiang: "TroGiang", video: "Video", taiLieu: "TaiLieu" }
+  TABS: { lop:"Lop", lopLink:"LopLink", tkb:"TKB", troGiang:"TroGiang", video:"Video", taiLieu:"TaiLieu", hoTro:"HoTro" }
 };
 
 function sheetCsvUrl(tabName){
@@ -434,56 +428,93 @@ function sheetCsvUrl(tabName){
 }
 
 /* Dữ liệu mẫu — chỉ dùng để demo khi CHƯA gắn Google Sheet thật,
-   hoặc dùng tạm khi kết nối Sheet bị lỗi. Khi đã điền SHEET_ID thật
-   và Sheet đã share đúng, dữ liệu thật sẽ tự thay thế phần này. */
+   hoặc dùng tạm khi kết nối Sheet bị lỗi. */
 const SAMPLE_DATA = {
   lop: [
-    {ma_lop:"BCA01",ten_hien_thi:"Lớp BCA01 - 2K9",mo_ta_ngan:"Khóa Xuất phát sớm ĐGNL Bộ Công An",khai_giang:"17/05/2026",trang_thai:"Đang học",zalo_link:"#",link_kich_hoat:"#",link_hoi_dap:"#",thu_tu:"1",hien_thi:"TRUE"},
-    {ma_lop:"BCA02",ten_hien_thi:"Lớp BCA02 - 2K9",mo_ta_ngan:"Khóa Xuất phát sớm ĐGNL Bộ Công An",khai_giang:"16/08/2026",trang_thai:"Sắp khai giảng",zalo_link:"#",link_kich_hoat:"#",link_hoi_dap:"#",thu_tu:"2",hien_thi:"TRUE"}
+    {ma_lop:"BCA01",ten_hien_thi:"Lớp BCA01 - 2K9",mo_ta_ngan:"Khóa Xuất phát sớm ĐGNL Bộ Công An",khai_giang:"17/05/2026",trang_thai:"Đang học",thu_tu:"1",hien_thi:"TRUE"},
+    {ma_lop:"BCA02",ten_hien_thi:"Lớp BCA02 - 2K9",mo_ta_ngan:"Khóa Xuất phát sớm ĐGNL Bộ Công An",khai_giang:"16/08/2026",trang_thai:"Sắp khai giảng",thu_tu:"2",hien_thi:"TRUE"},
+  ],
+  lopLink: [
+    {ma_lop:"BCA01",nhom:"Zalo học sinh",tieu_de:"Nhóm Zalo chính BCA01",link:"#",icon:"💬",thu_tu:"1",hien_thi:"TRUE"},
+    {ma_lop:"BCA01",nhom:"Zalo phụ huynh",tieu_de:"Nhóm Zalo phụ huynh BCA01",link:"#",icon:"👪",thu_tu:"2",hien_thi:"TRUE"},
+    {ma_lop:"BCA01",nhom:"Kích hoạt khóa học",tieu_de:"Form kích hoạt khóa BCA01",link:"#",icon:"🔑",thu_tu:"3",hien_thi:"TRUE"},
+    {ma_lop:"BCA01",nhom:"Hỏi đáp trợ giảng",tieu_de:"Nhóm hỏi đáp riêng BCA01",link:"#",icon:"❓",thu_tu:"4",hien_thi:"TRUE"},
+    {ma_lop:"BCA02",nhom:"Zalo học sinh",tieu_de:"Nhóm Zalo chính BCA02",link:"#",icon:"💬",thu_tu:"1",hien_thi:"TRUE"},
+    {ma_lop:"BCA02",nhom:"Zalo phụ huynh",tieu_de:"Phụ huynh BCA02 (đang cập nhật)",link:"",icon:"👪",thu_tu:"2",hien_thi:"TRUE"},
+    {ma_lop:"BCA02",nhom:"Kích hoạt khóa học",tieu_de:"Form kích hoạt khóa BCA02",link:"#",icon:"🔑",thu_tu:"3",hien_thi:"TRUE"},
+    {ma_lop:"ALL",nhom:"Livestream",tieu_de:"Nhóm kín livestream (Facebook)",link:"#",icon:"🎥",thu_tu:"1",hien_thi:"TRUE"},
   ],
   tkb: [
-    {ma_lop:"BCA01",thu:"3",gio_bat_dau:"20:00",gio_ket_thuc:"21:30",mon_hoc:"Toán - Đại số",giao_vien:"Thầy Đặng Ngọc Khương",hinh_thuc:"Zoom"},
-    {ma_lop:"BCA01",thu:"5",gio_bat_dau:"20:00",gio_ket_thuc:"21:30",mon_hoc:"Toán - Hình học",giao_vien:"Cô Nguyễn Thu Trang",hinh_thuc:"Zoom"},
-    {ma_lop:"BCA01",thu:"6",gio_bat_dau:"21:30",gio_ket_thuc:"23:00",mon_hoc:"Tiếng Anh",giao_vien:"Thầy Văn Hoa",hinh_thuc:"Zoom"},
-    {ma_lop:"BCA01",thu:"7",gio_bat_dau:"20:00",gio_ket_thuc:"21:30",mon_hoc:"Khoa học tự nhiên",giao_vien:"Thầy Đặng Ngọc Khương",hinh_thuc:"Zoom"},
-    {ma_lop:"BCA02",thu:"4",gio_bat_dau:"20:00",gio_ket_thuc:"21:30",mon_hoc:"Toán - Đại số",giao_vien:"Thầy Đặng Ngọc Khương",hinh_thuc:"Zoom"},
-    {ma_lop:"BCA02",thu:"6",gio_bat_dau:"20:00",gio_ket_thuc:"21:30",mon_hoc:"Ngữ văn",giao_vien:"Cô Nguyễn Thu Trang",hinh_thuc:"Zoom"}
+    {ma_lop:"BCA01",ca:"20h00",Thu2:"",Thu3:"Toán - Đại số\nThầy Đặng Ngọc Khương",Thu4:"",Thu5:"Toán - Hình học\nCô Nguyễn Thu Trang",Thu6:"",Thu7:"Khoa học tự nhiên\nThầy Đặng Ngọc Khương",CN:"",hinh_thuc:"ClassIn",ghi_chu:"",thu_tu:"1"},
+    {ma_lop:"BCA01",ca:"21h30",Thu2:"",Thu3:"",Thu4:"",Thu5:"",Thu6:"Tiếng Anh\nThầy Văn Hoa",Thu7:"",CN:"",hinh_thuc:"ClassIn",ghi_chu:"",thu_tu:"2"},
+    {ma_lop:"BCA02",ca:"20h00",Thu2:"",Thu3:"",Thu4:"Toán - Đại số\nThầy Đặng Ngọc Khương",Thu5:"",Thu6:"Ngữ văn\nCô Nguyễn Thu Trang",Thu7:"",CN:"",hinh_thuc:"ClassIn",ghi_chu:"",thu_tu:"1"},
   ],
   troGiang: [
     {ho_ten:"Nguyễn Văn A",vai_tro:"Quản lý vận hành",loai:"quan_ly",mon_phu_trach:"Hỗ trợ tài khoản & vận chuyển",sdt:"0900000001",zalo_link:"#",thu_tu:"1",hien_thi:"TRUE"},
     {ho_ten:"Trần Thị B",vai_tro:"Lead trợ giảng",loai:"tro_giang",mon_phu_trach:"Toán",sdt:"0900000002",zalo_link:"#",thu_tu:"2",hien_thi:"TRUE"},
     {ho_ten:"Lê Văn C",vai_tro:"Trợ giảng",loai:"tro_giang",mon_phu_trach:"Tiếng Anh",sdt:"0900000003",zalo_link:"#",thu_tu:"3",hien_thi:"TRUE"},
-    {ho_ten:"Phạm Thị D",vai_tro:"Trợ giảng",loai:"tro_giang",mon_phu_trach:"Khoa học tự nhiên",sdt:"0900000004",zalo_link:"#",thu_tu:"4",hien_thi:"TRUE"}
+    {ho_ten:"Phạm Thị D",vai_tro:"Trợ giảng",loai:"tro_giang",mon_phu_trach:"Khoa học tự nhiên",sdt:"0900000004",zalo_link:"#",thu_tu:"4",hien_thi:"TRUE"},
   ],
   video: [
-    {tieu_de:"Hướng dẫn nhập học & kích hoạt khóa",mo_ta:"Các bước đăng ký tài khoản và tham gia lớp Zoom",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"1",hien_thi:"TRUE"},
-    {tieu_de:"Hướng dẫn sử dụng nhóm Zalo & nhận tài liệu",mo_ta:"Cách vào nhóm Zalo lớp và tải tài liệu học tập",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"2",hien_thi:"TRUE"}
+    {tieu_de:"Hướng dẫn nhập học & kích hoạt khóa",mo_ta:"Các bước đăng ký tài khoản và tham gia lớp học",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"1",hien_thi:"TRUE"},
+    {tieu_de:"Hướng dẫn sử dụng nhóm Zalo & nhận tài liệu",mo_ta:"Cách vào nhóm Zalo lớp và tải tài liệu học tập",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"2",hien_thi:"TRUE"},
   ],
   taiLieu: [
-    {tieu_de:"Hướng dẫn tải & sử dụng Zoom",mo_ta:"Cách cài đặt, đăng ký và tham gia lớp học với giáo viên",link:"#",thu_tu:"1",hien_thi:"TRUE"},
-    {tieu_de:"Sổ tay học viên BCA 2027",mo_ta:"Quy định lớp học, lộ trình học chi tiết theo từng giai đoạn",link:"#",thu_tu:"2",hien_thi:"TRUE"}
-  ]
+    {tieu_de:"Sổ tay học viên BCA 2027 (bản đầy đủ)",mo_ta:"Toàn bộ quy định lớp học và lộ trình chi tiết theo từng giai đoạn",link:"#",thu_tu:"1",hien_thi:"TRUE"},
+    {tieu_de:"Bảng nội dung khóa học theo chuyên đề",mo_ta:"Danh sách chuyên đề Toán / Văn / Sử / Anh / KHTN-XH",link:"#",thu_tu:"2",hien_thi:"TRUE"},
+  ],
+  hoTro: [
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Cài đặt ClassIn",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"2",dong_loai:"link",icon:"💻",noi_dung:"Tải ClassIn cho Windows",link:"#",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"3",dong_loai:"link",icon:"🍎",noi_dung:"Tải ClassIn cho Mac",link:"#",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"4",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn chi tiết cách cài đặt ClassIn",link:"#",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"5",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Kích hoạt tài khoản & nhập học",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"6",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn kích hoạt tài khoản và nhập học",link:"#",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"7",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Làm bài tập trên ClassIn",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"8",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn làm bài tập trên ClassIn",link:"#",hien_thi:"TRUE"},
+    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"9",dong_loai:"luu_y",icon:"",noi_dung:"✅ Sau khi hoàn thành đủ 3 bước trên, hệ thống sẽ tự thêm bạn vào lớp — không cần thao tác gì thêm. Thời gian xử lý: 12–24 giờ.",link:"",hien_thi:"TRUE"},
+
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 1: Không còn sử dụng được email cũ",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"2",dong_loai:"link",icon:"📝",noi_dung:"Điền Form đổi email (lớp BCA)",link:"#",hien_thi:"TRUE"},
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 2: Muốn kiểm tra yêu cầu đổi email đã được xử lý chưa",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"4",dong_loai:"link",icon:"📊",noi_dung:"Danh sách trạng thái đổi email (lớp BCA)",link:"#",hien_thi:"TRUE"},
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"5",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 3: Không biết mình đã được thêm vào ClassIn chưa",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"6",dong_loai:"link",icon:"📊",noi_dung:"Kiểm tra danh sách đã thêm vào ClassIn",link:"#",hien_thi:"TRUE"},
+
+    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Có thắc mắc về bài tập, chưa hiểu kiến thức trên lớp, hoặc cần giáo viên hỗ trợ:",link:"",hien_thi:"TRUE"},
+    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"2",dong_loai:"link",icon:"💬",noi_dung:"Link hỏi đáp bài tập chung",link:"#",hien_thi:"TRUE"},
+    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"3",dong_loai:"luu_y",icon:"",noi_dung:"Một số lớp có thêm nhóm hỏi đáp riêng — xem trong mục \"Bạn thuộc lớp nào?\" phía dưới để lấy đúng link của lớp bạn.",link:"",hien_thi:"TRUE"},
+
+    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"1",dong_loai:"link",icon:"🔒",noi_dung:"Link điền xin mở khóa tài khoản",link:"#",hien_thi:"TRUE"},
+    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"2",dong_loai:"link",icon:"🔍",noi_dung:"Link tra cứu trạng thái tài khoản",link:"#",hien_thi:"TRUE"},
+    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"3",dong_loai:"luu_y",icon:"",noi_dung:"⏰ Thời gian xử lý mở khóa: Thứ 2 · Thứ 4 · Thứ 6 · Chủ nhật — vào khoảng 22:00 các ngày trên.",link:"",hien_thi:"TRUE"},
+
+    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Chờ khoảng 1–3 giờ để hệ thống cập nhật.",link:"",hien_thi:"TRUE"},
+    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"2",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Kiểm tra hộp thư Spam và mục Quảng cáo (Promotions).",link:"",hien_thi:"TRUE"},
+    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Nếu vẫn chưa thấy, liên hệ kênh hỗ trợ để được kiểm tra.",link:"",hien_thi:"TRUE"},
+    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"4",dong_loai:"luu_y",icon:"",noi_dung:"📩 Email tài khoản thường rơi vào mục Quảng cáo/Spam. Hãy kiểm tra kỹ hai mục này trước khi báo hỗ trợ nhé!",link:"",hien_thi:"TRUE"},
+  ],
 };
 
 /* ================================================================
    TIỆN ÍCH
 ================================================================= */
 function truthy(v){
-  if(v===undefined||v===null) return true; // cột hien_thi trống -> mặc định hiện
+  if(v===undefined||v===null) return true;
   const s = String(v).trim().toUpperCase();
   return !(s==="FALSE"||s==="0"||s==="AN"||s==="ẨN"||s==="");
 }
+function hasLink(v){ return !!(v && String(v).trim() && String(v).trim()!=="#"); }
 function sortByThuTu(a,b){ return (parseFloat(a.thu_tu)||0) - (parseFloat(b.thu_tu)||0); }
-function initials(name){
-  return (name||"?").trim().split(/\s+/).slice(-2).map(w=>w[0]).join("").toUpperCase();
+function initials(name){ return (name||"?").trim().split(/\s+/).slice(-2).map(w=>w[0]).join("").toUpperCase(); }
+function iconForNhom(n){
+  const map = {"Zalo học sinh":"💬","Zalo phụ huynh":"👪","Kích hoạt khóa học":"🔑","Hỏi đáp trợ giảng":"❓","Livestream":"🎥"};
+  return map[n] || "🔗";
 }
 
-function fetchTab(tabKey, tabName){
+function fetchTab(tabName){
   return new Promise((resolve)=>{
-    if(!CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0){
-      resolve(null); // chưa cấu hình -> dùng dữ liệu mẫu
-      return;
-    }
+    if(!CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0){ resolve(null); return; }
     Papa.parse(sheetCsvUrl(tabName), {
       download:true, header:true, skipEmptyLines:true,
       complete: (res)=> resolve(res.data && res.data.length ? res.data : null),
@@ -495,7 +526,7 @@ function fetchTab(tabKey, tabName){
 /* ================================================================
    TẢI DỮ LIỆU + RENDER
 ================================================================= */
-let DATA = { lop:[], tkb:[], troGiang:[], video:[], taiLieu:[] };
+let DATA = { lop:[], lopLink:[], tkb:[], troGiang:[], video:[], taiLieu:[], hoTro:[] };
 let selectedClass = null;
 let teamFilterState = "tat_ca";
 
@@ -503,20 +534,20 @@ async function loadAll(){
   const syncText = document.getElementById('syncText');
   const syncDot = document.getElementById('syncDot');
   try{
-    const [lop, tkb, troGiang, video, taiLieu] = await Promise.all([
-      fetchTab('lop', CONFIG.TABS.lop),
-      fetchTab('tkb', CONFIG.TABS.tkb),
-      fetchTab('troGiang', CONFIG.TABS.troGiang),
-      fetchTab('video', CONFIG.TABS.video),
-      fetchTab('taiLieu', CONFIG.TABS.taiLieu),
+    const [lop, lopLink, tkb, troGiang, video, taiLieu, hoTro] = await Promise.all([
+      fetchTab(CONFIG.TABS.lop), fetchTab(CONFIG.TABS.lopLink), fetchTab(CONFIG.TABS.tkb),
+      fetchTab(CONFIG.TABS.troGiang), fetchTab(CONFIG.TABS.video), fetchTab(CONFIG.TABS.taiLieu),
+      fetchTab(CONFIG.TABS.hoTro),
     ]);
     DATA.lop      = (lop      || SAMPLE_DATA.lop).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.lopLink  = (lopLink  || SAMPLE_DATA.lopLink).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
     DATA.tkb      = (tkb      || SAMPLE_DATA.tkb);
     DATA.troGiang = (troGiang || SAMPLE_DATA.troGiang).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
     DATA.video    = (video    || SAMPLE_DATA.video).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
     DATA.taiLieu  = (taiLieu  || SAMPLE_DATA.taiLieu).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.hoTro    = (hoTro    || SAMPLE_DATA.hoTro).filter(r=>truthy(r.hien_thi));
 
-    const usingSample = !lop && !tkb && !troGiang && !video && !taiLieu;
+    const usingSample = !lop && !lopLink && !tkb && !troGiang && !video && !taiLieu && !hoTro;
     syncDot.classList.remove('err');
     syncText.textContent = usingSample
       ? "Đang hiển thị dữ liệu mẫu — điền Sheet ID trong index.html để dùng dữ liệu thật"
@@ -528,6 +559,7 @@ async function loadAll(){
   }
 
   renderVideos();
+  renderFaq();
   renderDocs();
   renderTeam();
   renderClassPicker();
@@ -536,10 +568,7 @@ async function loadAll(){
 /* ---------- VIDEO ---------- */
 function renderVideos(){
   const grid = document.getElementById('videoGrid');
-  if(!DATA.video.length){
-    grid.innerHTML = `<div class="tkb-empty" style="grid-column:1/-1;">Chưa có video hướng dẫn nào.</div>`;
-    return;
-  }
+  if(!DATA.video.length){ grid.innerHTML = `<div class="tkb-empty" style="grid-column:1/-1;">Chưa có video hướng dẫn nào.</div>`; return; }
   grid.innerHTML = DATA.video.map(v=>`
     <div class="card video-card">
       <div class="video-frame"><iframe src="${v.video_url}" title="${v.tieu_de}" allowfullscreen loading="lazy"></iframe></div>
@@ -547,13 +576,56 @@ function renderVideos(){
     </div>`).join('');
 }
 
+/* ---------- XỬ LÝ SỰ CỐ ---------- */
+function renderFaq(){
+  const jumpEl = document.getElementById('faqJump');
+  const listEl = document.getElementById('faqList');
+  if(!DATA.hoTro.length){
+    jumpEl.innerHTML = '';
+    listEl.innerHTML = `<div class="tkb-empty">Chưa có nội dung xử lý sự cố.</div>`;
+    return;
+  }
+  // gom theo muc_id, giữ thứ tự theo muc_thu_tu
+  const mucMap = new Map();
+  DATA.hoTro.forEach(r=>{
+    if(!mucMap.has(r.muc_id)){
+      mucMap.set(r.muc_id, { id:r.muc_id, tieu_de:r.muc_tieu_de, mau:r.muc_mau, thu_tu:parseFloat(r.muc_thu_tu)||0, rows:[] });
+    }
+    mucMap.get(r.muc_id).rows.push(r);
+  });
+  const mucs = [...mucMap.values()].sort((a,b)=>a.thu_tu-b.thu_tu);
+  mucs.forEach(m=> m.rows.sort(sortByThuTu));
+
+  jumpEl.innerHTML = mucs.map(m=>`<a href="#faq-muc-${m.id}">${m.thu_tu}. ${m.tieu_de}</a>`).join('');
+
+  listEl.innerHTML = mucs.map(m=>{
+    const color = `var(--c-${m.mau||'xanh_duong'})`;
+    const body = m.rows.map(r=>{
+      if(r.dong_loai==='buoc'){
+        return `<div class="faq-step">${r.noi_dung||''}</div>`;
+      }
+      if(r.dong_loai==='luu_y'){
+        return `<div class="faq-note">${r.noi_dung||''}</div>`;
+      }
+      // link
+      const ok = hasLink(r.link);
+      return `<a class="faq-link ${ok?'':'disabled'}" href="${ok?r.link:'#'}" target="_blank" rel="noopener">${r.icon||'🔗'} ${r.noi_dung||''}</a>`;
+    }).join('');
+    return `
+      <div class="faq-card" id="faq-muc-${m.id}">
+        <div class="faq-head" style="background:${color}">
+          <div class="faq-num">${m.thu_tu}</div>
+          <h4>${m.tieu_de}</h4>
+        </div>
+        <div class="faq-body">${body}</div>
+      </div>`;
+  }).join('');
+}
+
 /* ---------- TÀI LIỆU ---------- */
 function renderDocs(){
   const list = document.getElementById('docList');
-  if(!DATA.taiLieu.length){
-    list.innerHTML = `<div class="tkb-empty">Chưa có tài liệu nào.</div>`;
-    return;
-  }
+  if(!DATA.taiLieu.length){ list.innerHTML = `<div class="tkb-empty">Chưa có tài liệu nào.</div>`; return; }
   list.innerHTML = DATA.taiLieu.map((d,i)=>`
     <a class="doc-row" href="${d.link||'#'}" target="_blank" rel="noopener" style="${i>0?'border-top:1px solid var(--border)':''}">
       <div class="doc-icon">📄</div>
@@ -574,10 +646,7 @@ function renderTeam(){
 
   const rows = teamFilterState==='tat_ca' ? DATA.troGiang : DATA.troGiang.filter(t=>t.loai==='tro_giang');
   const scroll = document.getElementById('teamScroll');
-  if(!rows.length){
-    scroll.innerHTML = `<div class="tkb-empty" style="width:100%;">Chưa có thành viên nào trong nhóm này.</div>`;
-    return;
-  }
+  if(!rows.length){ scroll.innerHTML = `<div class="tkb-empty" style="width:100%;">Chưa có thành viên nào trong nhóm này.</div>`; return; }
   scroll.innerHTML = rows.map(t=>`
     <div class="card team-card">
       <div class="team-avatar">${initials(t.ho_ten)}</div>
@@ -597,9 +666,7 @@ function renderClassPicker(){
     document.getElementById('tkbEmpty').textContent = 'Chưa có lớp học nào.';
     return;
   }
-  if(!selectedClass || !DATA.lop.find(l=>l.ma_lop===selectedClass)){
-    selectedClass = DATA.lop[0].ma_lop;
-  }
+  if(!selectedClass || !DATA.lop.find(l=>l.ma_lop===selectedClass)){ selectedClass = DATA.lop[0].ma_lop; }
   grid.innerHTML = DATA.lop.map(l=>`
     <button class="class-pick ${l.ma_lop===selectedClass?'selected':''}" data-lop="${l.ma_lop}">
       <div class="check">✓</div>
@@ -617,26 +684,18 @@ function renderClassPicker(){
   renderClassDetail();
 }
 
-/* ---------- CHI TIẾT LỚP: TKB + LINK ---------- */
-const THU_LABEL = [
-  {v:2,l:'Thứ 2'},{v:3,l:'Thứ 3'},{v:4,l:'Thứ 4'},{v:5,l:'Thứ 5'},
-  {v:6,l:'Thứ 6'},{v:7,l:'Thứ 7'},{v:8,l:'Chủ nhật'}
+/* ---------- CHI TIẾT LỚP: TKB dạng lưới + LINK theo nhóm ---------- */
+const THU_COLS = [
+  {key:'Thu2',l:'Thứ 2',v:2},{key:'Thu3',l:'Thứ 3',v:3},{key:'Thu4',l:'Thứ 4',v:4},
+  {key:'Thu5',l:'Thứ 5',v:5},{key:'Thu6',l:'Thứ 6',v:6},{key:'Thu7',l:'Thứ 7',v:7},{key:'CN',l:'Chủ nhật',v:8},
 ];
-function todayThuValue(){
-  const map = {0:8,1:2,2:3,3:4,4:5,5:6,6:7};
-  return map[new Date().getDay()];
-}
-function toMinutes(hhmm){
-  if(!hhmm) return 0;
-  const [h,m] = hhmm.split(':').map(Number);
-  return (h||0)*60+(m||0);
-}
+function todayThuValue(){ const map = {0:8,1:2,2:3,3:4,4:5,5:6,6:7}; return map[new Date().getDay()]; }
 
 function renderClassDetail(){
   const classObj = DATA.lop.find(l=>l.ma_lop===selectedClass);
   document.getElementById('tkbTitle').textContent = classObj ? `Thông tin ${classObj.ten_hien_thi}` : 'Thông tin lớp';
 
-  const rows = DATA.tkb.filter(r=>r.ma_lop===selectedClass);
+  const rows = DATA.tkb.filter(r=>r.ma_lop===selectedClass).sort(sortByThuTu);
   const table = document.getElementById('tkbTable');
   const empty = document.getElementById('tkbEmpty');
   const today = todayThuValue();
@@ -649,44 +708,58 @@ function renderClassDetail(){
     empty.style.display='none';
     table.style.display='table';
 
-    const slotKey = r => `${r.gio_bat_dau}-${r.gio_ket_thuc}`;
-    const slots = [...new Set(rows.map(slotKey))].sort((a,b)=>{
-      return toMinutes(a.split('-')[0]) - toMinutes(b.split('-')[0]);
-    });
-
     const thead = `<thead><tr>
-      <th class="time-col">Thời gian</th>
-      ${THU_LABEL.map(d=>`<th class="${d.v===today?'today':''}">${d.l}${d.v===today?'<span class="today-tag">Hôm nay</span>':''}</th>`).join('')}
+      <th class="ca-col">Ca</th>
+      ${THU_COLS.map(d=>`<th class="${d.v===today?'today':''}">${d.l}${d.v===today?'<span class="today-tag">Hôm nay</span>':''}</th>`).join('')}
     </tr></thead>`;
 
-    const tbody = `<tbody>${slots.map(slot=>{
-      const [gd,gk] = slot.split('-');
-      const cells = THU_LABEL.map(d=>{
-        const match = rows.find(r=> r.thu==String(d.v) && slotKey(r)===slot);
+    const tbody = `<tbody>${rows.map(r=>{
+      const sub = [r.hinh_thuc, r.ghi_chu].filter(Boolean).join(' · ');
+      const cells = THU_COLS.map(d=>{
+        const raw = (r[d.key]||'').trim();
         const cls = d.v===today ? 'today-col' : '';
-        if(match){
-          return `<td class="${cls}"><div class="slot"><b>${match.mon_hoc||''}</b><span>${match.giao_vien||''}</span></div></td>`;
-        }
-        return `<td class="${cls} empty-cell">—</td>`;
+        if(!raw) return `<td class="${cls} empty-cell">—</td>`;
+        const [mon, ...rest] = raw.split(/\r?\n/);
+        const gv = rest.join(' ').trim();
+        return `<td class="${cls}"><div class="slot"><b>${mon}</b>${gv?`<span>${gv}</span>`:''}</div></td>`;
       }).join('');
-      return `<tr><td class="time-col">${gd} - ${gk}</td>${cells}</tr>`;
+      return `<tr><td class="ca-col">${r.ca||''}${sub?`<span class="ca-sub">${sub}</span>`:''}</td>${cells}</tr>`;
     }).join('')}</tbody>`;
 
     table.innerHTML = thead + tbody;
   }
 
-  const linkGrid = document.getElementById('classLinkGrid');
-  if(!classObj){ linkGrid.innerHTML=''; return; }
-  const links = [
-    {icon:'💬',title:'Nhóm Zalo chính',sub:'Nhận lịch học, link Zoom',href:classObj.zalo_link},
-    {icon:'🔑',title:'Kích hoạt khóa học',sub:'Nhập mã kích hoạt của bạn',href:classObj.link_kich_hoat},
-    {icon:'❓',title:'Hỏi đáp trợ giảng',sub:'Trao đổi bài vở với trợ giảng',href:classObj.link_hoi_dap},
-  ].filter(l=>l.href && l.href!=='#');
-  linkGrid.innerHTML = links.length ? links.map(l=>`
-    <a class="card link-card" href="${l.href}" target="_blank" rel="noopener">
-      <div class="doc-icon">${l.icon}</div>
-      <div class="doc-text"><h4>${l.title}</h4><p>${l.sub}</p></div>
-    </a>`).join('') : '';
+  renderClassLinks(classObj);
+}
+
+function renderClassLinks(classObj){
+  const wrap = document.getElementById('classLinkGroups');
+  if(!classObj){ wrap.innerHTML=''; return; }
+  const rows = DATA.lopLink.filter(l => l.ma_lop===classObj.ma_lop || (l.ma_lop||'').toUpperCase()==='ALL');
+  if(!rows.length){ wrap.innerHTML=''; return; }
+
+  // gộp theo nhóm, giữ thứ tự xuất hiện
+  const groups = [];
+  const seen = {};
+  rows.forEach(r=>{
+    const key = r.nhom || 'Khác';
+    if(!seen[key]){ seen[key] = { nhom:key, items:[] }; groups.push(seen[key]); }
+    seen[key].items.push(r);
+  });
+
+  wrap.innerHTML = groups.map(g=>`
+    <div>
+      <div class="link-group-title">${g.nhom}</div>
+      <div class="link-grid">
+        ${g.items.sort(sortByThuTu).map(l=>{
+          const ok = hasLink(l.link);
+          return `<a class="card link-card ${ok?'':'disabled'}" href="${ok?l.link:'#'}" target="_blank" rel="noopener">
+            <div class="doc-icon">${l.icon || iconForNhom(l.nhom)}</div>
+            <div class="doc-text"><h4>${l.tieu_de||''}</h4>${ok?'':'<p>Đang cập nhật</p>'}</div>
+          </a>`;
+        }).join('')}
+      </div>
+    </div>`).join('');
 }
 
 loadAll();
