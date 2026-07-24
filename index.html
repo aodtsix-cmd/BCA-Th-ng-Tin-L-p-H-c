@@ -507,6 +507,15 @@ function truthy(v){
   const s = String(v).trim().toUpperCase();
   return !(s==="FALSE"||s==="0"||s==="AN"||s==="ẨN"||s==="");
 }
+/* Chuẩn hoá mã lớp: cắt khoảng trắng thừa + xoá ký tự vô hình (zero-width, BOM...)
+   để một dấu cách/ký tự ẩn gõ nhầm trong Sheet không làm rớt cả dòng khỏi kết quả so khớp. */
+function normId(v){
+  return String(v||'').replace(/[\u200B-\u200D\uFEFF\u00A0]/g,'').trim();
+}
+function cleanMaLop(rows){
+  rows.forEach(r=>{ if('ma_lop' in r) r.ma_lop = normId(r.ma_lop); });
+  return rows;
+}
 function hasLink(v){ return !!(v && String(v).trim() && String(v).trim()!=="#"); }
 function sortByThuTu(a,b){ return (parseFloat(a.thu_tu)||0) - (parseFloat(b.thu_tu)||0); }
 function initials(name){ return (name||"?").trim().split(/\s+/).slice(-2).map(w=>w[0]).join("").toUpperCase(); }
@@ -549,6 +558,8 @@ async function loadAll(){
     DATA.video    = (video    || SAMPLE_DATA.video).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
     DATA.taiLieu  = (taiLieu  || SAMPLE_DATA.taiLieu).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
     DATA.hoTro    = (hoTro    || SAMPLE_DATA.hoTro).filter(r=>truthy(r.hien_thi));
+
+    cleanMaLop(DATA.lop); cleanMaLop(DATA.lopLink); cleanMaLop(DATA.tkb);
 
     const usingSample = !lop && !lopLink && !tkb && !troGiang && !video && !taiLieu && !hoTro;
     syncDot.classList.remove('err');
