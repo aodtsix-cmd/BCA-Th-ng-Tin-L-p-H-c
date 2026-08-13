@@ -253,6 +253,95 @@
   .dot.err{background:#d9534f;}
 
   /* ============================================================
+     12b. NHÂN SỰ VẬN HÀNH (thẻ có mô tả nhiệm vụ)
+     ============================================================ */
+  .staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+  .staff-card{padding:20px;display:flex;flex-direction:column;gap:12px;}
+  .staff-top{display:flex;align-items:flex-start;gap:12px;}
+  .staff-avatar{
+    width:46px;height:46px;border-radius:14px;background:var(--green-700);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;
+  }
+  .staff-role{font-size:11px;font-weight:800;color:var(--orange-dark);text-transform:uppercase;letter-spacing:.04em;}
+  .staff-name{font-size:16.5px;font-weight:800;color:var(--green-900);font-family:'Be Vietnam Pro';margin-top:2px;}
+  .staff-tag{
+    display:inline-block;margin-top:6px;font-size:11px;font-weight:700;padding:3px 9px;
+    border-radius:999px;background:var(--green-100);color:var(--green-800);
+  }
+  .staff-duties{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+  .staff-duties li{
+    font-size:13px;color:var(--ink-soft);line-height:1.5;padding-left:16px;position:relative;
+  }
+  .staff-duties li:before{
+    content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--green-500);
+  }
+  .staff-actions{display:flex;gap:8px;margin-top:auto;padding-top:4px;flex-wrap:wrap;}
+  .staff-btn{
+    display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+    padding:9px 14px;border-radius:999px;text-decoration:none;border:1px solid var(--border);
+    background:var(--green-050);color:var(--green-800);
+  }
+  .staff-btn.primary{background:var(--green-700);color:#fff;border-color:var(--green-700);}
+
+  /* ============================================================
+     12c. QUY TẮC HỌC TẬP
+     ============================================================ */
+  .rule-card{overflow:hidden;}
+  .rule-head{padding:16px 22px;background:var(--green-700);color:#fff;}
+  .rule-head h3{font-size:16px;letter-spacing:.02em;}
+  .rule-head p{margin:4px 0 0;font-size:13px;opacity:.9;}
+  .rule-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;}
+  .rule-item{display:flex;gap:10px;font-size:14px;line-height:1.55;color:var(--ink);}
+  .rule-item .rule-dot{color:var(--green-600);font-weight:800;flex-shrink:0;}
+  .rule-steps{
+    margin-top:6px;border:1px solid #f0dfb8;background:#fff8ec;border-radius:var(--radius-md);padding:14px 16px;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .rule-steps .rule-steps-title{font-size:12px;font-weight:800;color:#9a6b12;text-transform:uppercase;letter-spacing:.04em;}
+  .rule-step{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#7a5b12;}
+  .rule-step b{
+    width:22px;height:22px;border-radius:7px;background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+  }
+  .rule-highlight{
+    margin-top:8px;padding:14px 18px;border-radius:var(--radius-md);
+    background:linear-gradient(90deg,var(--orange) 0%,var(--orange-dark) 100%);
+    color:#fff;font-weight:700;font-size:14px;line-height:1.5;text-align:center;
+  }
+
+  /* ============================================================
+     12d. HỆ THỐNG BÁO LỖI / GỬI YÊU CẦU
+     ============================================================ */
+  .form-toolbar{display:flex;flex-direction:column;gap:14px;margin-bottom:24px;}
+  .form-search{
+    width:100%;padding:14px 18px;border-radius:999px;border:1px solid var(--border);
+    font-size:14.5px;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  .form-search:focus{outline:none;border-color:var(--green-500);box-shadow:0 0 0 3px rgba(42,163,110,.12);}
+  .form-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+  .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+  .issue-card{padding:18px 20px;display:flex;flex-direction:column;gap:10px;}
+  .issue-top{display:flex;align-items:flex-start;gap:12px;}
+  .issue-icon{
+    width:40px;height:40px;border-radius:12px;background:var(--green-100);color:var(--green-700);
+    display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+  }
+  .issue-title{font-size:15px;font-weight:800;color:var(--green-900);line-height:1.35;}
+  .issue-cat{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;margin-bottom:3px;}
+  .issue-desc{font-size:13px;color:var(--ink-soft);line-height:1.55;}
+  .issue-meta{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ink-soft);}
+  .issue-meta span b{color:var(--green-800);font-weight:700;}
+  .issue-actions{display:flex;gap:8px;margin-top:auto;padding-top:6px;flex-wrap:wrap;}
+  .issue-btn{
+    display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+    padding:9px 14px;border-radius:var(--radius-sm);text-decoration:none;
+    background:var(--green-700);color:#fff;border:1px solid var(--green-700);
+  }
+  .issue-btn.ghost{background:#fff;color:var(--green-700);}
+  .issue-btn.disabled{background:#eef1ee;color:var(--ink-soft);border-color:var(--border);pointer-events:none;}
+  .form-empty{grid-column:1/-1;}
+
+  /* ============================================================
      13. RESPONSIVE
      ============================================================ */
   @media (max-width:860px){
@@ -281,9 +370,8 @@
   <header class="masthead">
     <a href="#" class="logo">
       <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" fill="#f2994a"/>
-        <polygon points="50,16 82,33 82,67 50,84 18,67 18,33" fill="#186b45"/>
-        <text x="50" y="58" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="26" fill="#ffffff">HSA</text>
+        <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" fill="none" stroke="#f2994a" stroke-width="7"/>
+        <text x="50" y="61" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="30" fill="#1f8a5c">HSA</text>
       </svg>
       <div>
         <div class="logo-word">HSA <span>EDUCATION</span></div>
@@ -310,9 +398,10 @@
       <h3>Bạn cần gì lúc này?</h3>
       <p>Chọn nhanh việc cần làm, hệ thống dẫn tới đúng phần bên dưới.</p>
       <div class="hero-card-list">
-        <a class="hero-card-row" href="#xu-ly-su-co"><span>🛠 Xử lý sự cố ClassIn / tài khoản</span><span class="pill orange">Đi tới</span></a>
+        <a class="hero-card-row" href="#bao-loi"><span>📮 Gặp lỗi? Gửi yêu cầu hỗ trợ</span><span class="pill orange">Đi tới</span></a>
         <a class="hero-card-row" href="#lich-hoc"><span>📅 Xem lịch học tuần này</span><span class="pill">Đi tới</span></a>
-        <a class="hero-card-row" href="#doi-ngu"><span>🎧 Liên hệ trợ giảng</span><span class="pill muted">Đi tới</span></a>
+        <a class="hero-card-row" href="#doi-ngu"><span>🎧 Liên hệ đúng người phụ trách</span><span class="pill muted">Đi tới</span></a>
+        <a class="hero-card-row" href="#quy-tac"><span>📋 Quy tắc học trên ClassIn</span><span class="pill muted">Đi tới</span></a>
       </div>
     </div>
   </div>
@@ -327,6 +416,22 @@
       <p class="section-sub">Xem video để nắm quy trình kích hoạt khóa và tham gia lớp học.</p>
     </div>
     <div class="video-grid" id="videoGrid"></div>
+  </div>
+</section>
+
+<!-- ================= HỆ THỐNG BÁO LỖI / GỬI YÊU CẦU ================= -->
+<section class="section" id="bao-loi">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">📮 Gặp vấn đề cần xử lý?</span>
+      <h2 class="section-title">Gửi yêu cầu hỗ trợ</h2>
+      <p class="section-sub">Chọn đúng vấn đề bạn đang gặp để gửi yêu cầu. Bộ phận vận hành tổng hợp và xử lý theo đợt, bạn có thể tự tra cứu kết quả tại link tra cứu của từng mục.</p>
+    </div>
+    <div class="form-toolbar">
+      <input class="form-search" id="formSearch" type="search" placeholder="🔍 Gõ vấn đề bạn gặp… (VD: khóa tài khoản, quên mật khẩu, sai SBD)" autocomplete="off">
+      <div class="form-chips" id="formChips"></div>
+    </div>
+    <div class="form-grid" id="formGrid"></div>
   </div>
 </section>
 
@@ -360,13 +465,24 @@
 <section class="section" id="doi-ngu" style="background:var(--green-050)">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">🎧 Vẫn cần người hỗ trợ?</span>
-      <h2 class="section-title">Liên hệ trực tiếp qua Zalo</h2>
-      <p class="section-sub">Các anh chị trợ giảng phụ trách từng mảng, phản hồi trong giờ hành chính và buổi tối.</p>
+      <span class="eyebrow">🎧 Nhắn đúng người, xử lý nhanh hơn</span>
+      <h2 class="section-title">Bộ phận quản lý lớp &amp; vận hành</h2>
+      <p class="section-sub">Mỗi anh/chị phụ trách một mảng riêng. Xem phần việc bên dưới để nhắn đúng người, tránh phải chuyển qua lại nhiều đầu mối.</p>
     </div>
     <div class="team-filter" id="teamFilter"></div>
-    <div class="team-scroll" id="teamScroll"></div>
-    <div class="scroll-hint">↔ Vuốt ngang để xem thêm</div>
+    <div class="staff-grid" id="staffGrid"></div>
+  </div>
+</section>
+
+<!-- ================= QUY TẮC HỌC TẬP ================= -->
+<section class="section" id="quy-tac">
+  <div class="wrap" style="max-width:860px">
+    <div class="section-head">
+      <span class="eyebrow">📋 Trước khi vào lớp</span>
+      <h2 class="section-title">Quy tắc học tập</h2>
+      <p class="section-sub">Để buổi học hiệu quả và nghiêm túc, học sinh cần nắm rõ các quy định sau.</p>
+    </div>
+    <div id="ruleList"></div>
   </div>
 </section>
 
@@ -419,16 +535,38 @@
    Xem hướng dẫn đầy đủ trong file HUONG-DAN-SU-DUNG.md
 ================================================================= */
 const CONFIG = {
-  SHEET_ID: "1HLEZGgQ7CyEmWyq39VCUfj8ifOsy0GozNrirGjF8rX8", // <-- thay bằng Sheet ID thật của bạn
-  TABS: { lop:"Lop", lopLink:"LopLink", tkb:"TKB", troGiang:"TroGiang", video:"Video", taiLieu:"TaiLieu", hoTro:"HoTro" }
+  SHEET_ID: "DAN_SHEET_ID_VAO_DAY", // <-- thay bằng Sheet ID thật của bạn
+  TABS: {
+    lop:"Lop", lopLink:"LopLink", tkb:"TKB", troGiang:"TroGiang",
+    video:"Video", taiLieu:"TaiLieu", hoTro:"HoTro",
+    quyTac:"QuyTac",   // quy tắc học tập
+    form:"Form",       // hệ thống báo lỗi / gửi yêu cầu
+  }
 };
 
-function sheetCsvUrl(tabName){
-  // &_= là cache-buster: đổi mỗi lần tải trang để Google luôn trả bản dữ liệu mới nhất,
-  // không bị dính cache cũ vài phút sau khi Sheet vừa được sửa.
+function sheetCsvUrl(tab){
+  // Hỗ trợ CẢ 2 kiểu cấu hình TABS để không phá vỡ bản đã cài đặt sẵn:
+  //   - Kiểu tên tab:  tkb: "TKB"
+  //   - Kiểu có GID :  tkb: { name:"TKB", gid:"64984146" }
+  // Nếu có GID thì ưu tiên dùng GID (chính xác tuyệt đối, không phụ thuộc tên tab).
   const bust = Date.now();
-  return `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}&_=${bust}`;
+  const base = `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&_=${bust}`;
+  if(tab && typeof tab === 'object' && tab.gid && String(tab.gid).indexOf('DAN_GID')!==0){
+    return `${base}&gid=${encodeURIComponent(tab.gid)}`;
+  }
+  const name = (tab && typeof tab === 'object') ? tab.name : tab;
+  return `${base}&sheet=${encodeURIComponent(name)}`;
 }
+
+function tabConfigured(tab){
+  if(!tab) return false;
+  if(typeof tab === 'object'){
+    const hasGid = tab.gid && String(tab.gid).indexOf('DAN_GID')!==0;
+    return !!(hasGid || tab.name);
+  }
+  return true;
+}
+
 
 /* Dữ liệu mẫu — chỉ dùng để demo khi CHƯA gắn Google Sheet thật,
    hoặc dùng tạm khi kết nối Sheet bị lỗi. */
@@ -453,10 +591,12 @@ const SAMPLE_DATA = {
     {ma_lop:"BCA02",ca:"20h00",Thu2:"",Thu3:"",Thu4:"Toán - Đại số\nThầy Đặng Ngọc Khương",Thu5:"",Thu6:"Ngữ văn\nCô Nguyễn Thu Trang",Thu7:"",CN:"",hinh_thuc:"ClassIn",ghi_chu:"",thu_tu:"1"},
   ],
   troGiang: [
-    {ho_ten:"Nguyễn Văn A",vai_tro:"Quản lý vận hành",loai:"quan_ly",mon_phu_trach:"Hỗ trợ tài khoản & vận chuyển",sdt:"0900000001",zalo_link:"#",thu_tu:"1",hien_thi:"TRUE"},
-    {ho_ten:"Trần Thị B",vai_tro:"Lead trợ giảng",loai:"tro_giang",mon_phu_trach:"Toán",sdt:"0900000002",zalo_link:"#",thu_tu:"2",hien_thi:"TRUE"},
-    {ho_ten:"Lê Văn C",vai_tro:"Trợ giảng",loai:"tro_giang",mon_phu_trach:"Tiếng Anh",sdt:"0900000003",zalo_link:"#",thu_tu:"3",hien_thi:"TRUE"},
-    {ho_ten:"Phạm Thị D",vai_tro:"Trợ giảng",loai:"tro_giang",mon_phu_trach:"Khoa học tự nhiên",sdt:"0900000004",zalo_link:"#",thu_tu:"4",hien_thi:"TRUE"},
+    {ho_ten:"Đinh Thị Phúc",chuc_vu:"Trưởng bộ phận",nhom_loc:"Quản lý chung",sdt:"0943114865",zalo_link:"",nhiem_vu:"Quản lý chung hoạt động vận hành lớp học.\nTiếp nhận phản ánh về chất lượng nhân sự và hoạt động lớp.\nHỗ trợ kiểm tra, theo dõi tình hình học tập của học sinh.",thu_tu:"1",hien_thi:"TRUE"},
+    {ho_ten:"Nguyễn Phúc Thanh",chuc_vu:"Lead Team",nhom_loc:"Website & Tài khoản",sdt:"0384409051",zalo_link:"",nhiem_vu:"Hỗ trợ website: mã kích hoạt, tài khoản, mật khẩu.\nSắp xếp thời khóa biểu các lớp.\nTổng hợp báo cáo tình hình hoạt động lớp học.",thu_tu:"2",hien_thi:"TRUE"},
+    {ho_ten:"Hoàng Tiến Minh",chuc_vu:"Quản lý lớp",nhom_loc:"Lớp học & Hỗ trợ",sdt:"0936685333",zalo_link:"",nhiem_vu:"Quản lý và hỗ trợ hoạt động lớp học.\nGiải đáp các thắc mắc chung trong nhóm hỏi đáp.\nHỗ trợ kiểm tra và cung cấp tài liệu học tập.\nMở lớp ClassIn và hỗ trợ học sinh trong suốt buổi học.",thu_tu:"3",hien_thi:"TRUE"},
+    {ho_ten:"Nguyễn Viết Quân",chuc_vu:"Quản lý nhập học",nhom_loc:"Nhập học & SBD",sdt:"0974187313",zalo_link:"",nhiem_vu:"Xác nhận và hỗ trợ gửi email nhập học sau khi đăng ký.\nCấp lại SBD, mã kích hoạt khi có sai sót trong email nhập học.\nHỗ trợ cập nhật SĐT Zalo, email, địa chỉ và thông tin cá nhân sau đăng ký.",thu_tu:"4",hien_thi:"TRUE"},
+    {ho_ten:"Đặng Ngọc Công",chuc_vu:"Hỗ trợ ID sách",nhom_loc:"Sách & Vận chuyển",sdt:"0363539005",zalo_link:"",nhiem_vu:"Hỗ trợ ID và mã kích hoạt sách trên website.",thu_tu:"5",hien_thi:"TRUE"},
+    {ho_ten:"Lê Văn Trì",chuc_vu:"Hỗ trợ vận chuyển sách",nhom_loc:"Sách & Vận chuyển",sdt:"0334642345",zalo_link:"",nhiem_vu:"Hỗ trợ cập nhật SĐT, địa chỉ nhận sách, mã vận đơn.\nHỗ trợ thay đổi thông tin nhận sách sau khi lên đơn.\nTiếp nhận và xử lý các vấn đề liên quan đến đơn hàng vận chuyển sách.",thu_tu:"6",hien_thi:"TRUE"},
   ],
   video: [
     {tieu_de:"Hướng dẫn nhập học & kích hoạt khóa",mo_ta:"Các bước đăng ký tài khoản và tham gia lớp học",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"1",hien_thi:"TRUE"},
@@ -465,6 +605,30 @@ const SAMPLE_DATA = {
   taiLieu: [
     {tieu_de:"Sổ tay học viên BCA 2027 (bản đầy đủ)",mo_ta:"Toàn bộ quy định lớp học và lộ trình chi tiết theo từng giai đoạn",link:"#",thu_tu:"1",hien_thi:"TRUE"},
     {tieu_de:"Bảng nội dung khóa học theo chuyên đề",mo_ta:"Danh sách chuyên đề Toán / Văn / Sử / Anh / KHTN-XH",link:"#",thu_tu:"2",hien_thi:"TRUE"},
+  ],
+  quyTac: [
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"Để đảm bảo buổi học hiệu quả và nghiêm túc, học sinh cần tuân thủ các quy định sau",loai:"quy_dinh",noi_dung:"Bật camera, trang phục lịch sự, ngồi ngay ngắn.",thu_tu:"1",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"quy_dinh",noi_dung:"Tham gia lớp đúng giờ, chuẩn bị bài trước buổi học.",thu_tu:"2",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"quy_dinh",noi_dung:"Không bật mic tự do — chỉ mở mic khi có sự cho phép của giáo viên và quản lý lớp.",thu_tu:"3",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"quy_dinh",noi_dung:"Trao đổi qua khung chat — mọi câu hỏi, thắc mắc sẽ được trợ giảng và giáo viên hỗ trợ qua chat.",thu_tu:"4",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"quy_dinh",noi_dung:"Tuyệt đối không chat linh tinh, đùa cợt.",thu_tu:"5",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"vi_pham",noi_dung:"Cảnh báo",thu_tu:"6",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"vi_pham",noi_dung:"Kick khỏi lớp học",thu_tu:"7",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"vi_pham",noi_dung:"Khóa tài khoản 1 tháng",thu_tu:"8",hien_thi:"TRUE"},
+    {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"",loai:"nhan_manh",noi_dung:"ĐẶC BIỆT: Hãy là người học văn minh — có trách nhiệm — tôn trọng lớp học!",thu_tu:"9",hien_thi:"TRUE"},
+  ],
+  form: [
+    {nhom:"Tài khoản Website",tieu_de:"Tài khoản bị khóa",mo_ta:"Đăng nhập quá 3 thiết bị/trình duyệt cùng lúc sẽ bị khóa tự động.",icon:"🔒",link_form:"https://forms.gle/vJCUSJSS7u1S8ECm9",link_tra_cuu:"https://script.google.com/macros/s/AKfycbxFn-JCbjBEDaUcvsJs-xyXJ2hjViCgoHKwLgxMWapSukjoztyzbII3_oZZO2TOaz2seg/exec",nguoi_xu_ly:"Nguyễn Phúc Thanh",thoi_gian_xu_ly:"T2 · T4 · T6 · CN, khoảng 22:00",thu_tu:"1",hien_thi:"TRUE"},
+    {nhom:"Tài khoản Website",tieu_de:"Quên mật khẩu / không đăng nhập được",mo_ta:"Không truy cập được tài khoản trên hsavnu.edu.vn.",icon:"🔑",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Nguyễn Phúc Thanh",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"2",hien_thi:"TRUE"},
+    {nhom:"Tài khoản Website",tieu_de:"Chưa nhận được mã kích hoạt",mo_ta:"Đã đăng ký nhưng chưa có mã để kích hoạt khóa học.",icon:"🎫",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Nguyễn Phúc Thanh",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"3",hien_thi:"TRUE"},
+    {nhom:"Nhập học & SBD",tieu_de:"Sai SBD / sai thông tin nhập học",mo_ta:"Thông tin trong email nhập học bị sai, cần cấp lại.",icon:"🆔",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Nguyễn Viết Quân",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"4",hien_thi:"TRUE"},
+    {nhom:"Nhập học & SBD",tieu_de:"Chưa nhận được email nhập học",mo_ta:"Đã đăng ký nhưng chưa thấy email (kiểm tra kỹ mục Spam/Quảng cáo trước).",icon:"📧",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Nguyễn Viết Quân",thoi_gian_xu_ly:"Chờ 1–3 giờ rồi báo",thu_tu:"5",hien_thi:"TRUE"},
+    {nhom:"Nhập học & SBD",tieu_de:"Đổi SĐT Zalo / email / địa chỉ",mo_ta:"Cập nhật thông tin cá nhân sau khi đã đăng ký.",icon:"✏️",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Nguyễn Viết Quân",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"6",hien_thi:"TRUE"},
+    {nhom:"ClassIn",tieu_de:"Chưa được thêm vào lớp ClassIn",mo_ta:"Đã tạo tài khoản ClassIn nhưng quá 48h chưa thấy lớp.",icon:"🏫",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Hoàng Tiến Minh",thoi_gian_xu_ly:"Xử lý trong 24–48h",thu_tu:"7",hien_thi:"TRUE"},
+    {nhom:"ClassIn",tieu_de:"Đổi email ClassIn",mo_ta:"Không còn dùng được email cũ đã đăng ký ClassIn.",icon:"📮",link_form:"https://forms.gle/sdfutL4Wgr2Uqpk4A",link_tra_cuu:"",nguoi_xu_ly:"Hoàng Tiến Minh",thoi_gian_xu_ly:"Xử lý theo đợt",thu_tu:"8",hien_thi:"TRUE"},
+    {nhom:"Sách & Vận chuyển",tieu_de:"Chưa nhận được sách / tra mã vận đơn",mo_ta:"Kiểm tra tình trạng đơn hàng sách.",icon:"📦",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Lê Văn Trì",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"9",hien_thi:"TRUE"},
+    {nhom:"Sách & Vận chuyển",tieu_de:"Lỗi ID / mã kích hoạt sách",mo_ta:"Không kích hoạt được sách trên website.",icon:"📕",link_form:"",link_tra_cuu:"",nguoi_xu_ly:"Đặng Ngọc Công",thoi_gian_xu_ly:"Trong giờ hành chính",thu_tu:"10",hien_thi:"TRUE"},
+    {nhom:"Học tập",tieu_de:"Hỏi bài / thắc mắc kiến thức",mo_ta:"Câu hỏi về bài tập hoặc nội dung chưa hiểu trên lớp.",icon:"💬",link_form:"https://docs.google.com/document/d/1IV5q8sAoQu3KEeh-C8eDVyc8rlN8bRESPwaE6MJxpiA/edit?tab=t.0",link_tra_cuu:"",nguoi_xu_ly:"Hoàng Tiến Minh",thoi_gian_xu_ly:"Trong ngày",thu_tu:"11",hien_thi:"TRUE"},
   ],
   hoTro: [
     {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Cài đặt ClassIn",link:"",hien_thi:"TRUE"},
@@ -516,6 +680,12 @@ function cleanMaLop(rows){
   rows.forEach(r=>{ if('ma_lop' in r) r.ma_lop = normId(r.ma_lop); });
   return rows;
 }
+/* So khớp mã lớp KHÔNG phân biệt hoa/thường, khoảng trắng, hay kiểu gạch ngang
+   (TH01 - 2K9 / TH01-2K9 / th01–2k9 đều được coi là cùng 1 lớp). Chỉ dùng để SO KHỚP,
+   không dùng để hiển thị — hiển thị vẫn lấy nguyên ma_lop gốc. */
+function classKey(v){
+  return normId(v).toLowerCase().replace(/\s+/g,'').replace(/[\u2010-\u2015]/g,'-');
+}
 function hasLink(v){ return !!(v && String(v).trim() && String(v).trim()!=="#"); }
 function sortByThuTu(a,b){ return (parseFloat(a.thu_tu)||0) - (parseFloat(b.thu_tu)||0); }
 function initials(name){ return (name||"?").trim().split(/\s+/).slice(-2).map(w=>w[0]).join("").toUpperCase(); }
@@ -544,48 +714,82 @@ function toYoutubeEmbed(url){
   }catch(e){ return raw; }
 }
 
-function fetchTab(tabName){
+function fetchTabOnce(tab){
   return new Promise((resolve)=>{
-    if(!CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0){ resolve(null); return; }
-    Papa.parse(sheetCsvUrl(tabName), {
+    Papa.parse(sheetCsvUrl(tab), {
       download:true, header:true, skipEmptyLines:true,
-      complete: (res)=> resolve(res.data && res.data.length ? res.data : null),
-      error: ()=> resolve(null)
+      complete: (res)=> resolve({ok:true, data: res.data || []}),
+      error: ()=> resolve({ok:false, data: null})
     });
   });
+}
+async function fetchTab(tab){
+  if(!CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0 || !tabConfigured(tab)){
+    return {ok:false, data:null, skipped:true};
+  }
+  let res = await fetchTabOnce(tab);
+  // gviz thỉnh thoảng tự trả về ô rỗng một cách ngẫu nhiên (lỗi đã được report trên
+  // Google Groups nhiều năm nay, không sửa được từ phía client) — thử lại tối đa 2 lần nữa.
+  for(let attempt=0; attempt<2 && !res.ok; attempt++){
+    await new Promise(r=>setTimeout(r, 700 + attempt*500));
+    res = await fetchTabOnce(tab);
+  }
+  return res;
 }
 
 /* ================================================================
    TẢI DỮ LIỆU + RENDER
 ================================================================= */
-let DATA = { lop:[], lopLink:[], tkb:[], troGiang:[], video:[], taiLieu:[], hoTro:[] };
+let DATA = { lop:[], lopLink:[], tkb:[], troGiang:[], video:[], taiLieu:[], hoTro:[], quyTac:[], form:[] };
 let selectedClass = null;
 let teamFilterState = "tat_ca";
+let formFilterState = "tat_ca";
+let formSearchQuery = "";
 
 async function loadAll(){
   const syncText = document.getElementById('syncText');
   const syncDot = document.getElementById('syncDot');
   try{
-    const [lop, lopLink, tkb, troGiang, video, taiLieu, hoTro] = await Promise.all([
+    const [lop, lopLink, tkb, troGiang, video, taiLieu, hoTro, quyTac, form] = await Promise.all([
       fetchTab(CONFIG.TABS.lop), fetchTab(CONFIG.TABS.lopLink), fetchTab(CONFIG.TABS.tkb),
       fetchTab(CONFIG.TABS.troGiang), fetchTab(CONFIG.TABS.video), fetchTab(CONFIG.TABS.taiLieu),
-      fetchTab(CONFIG.TABS.hoTro),
+      fetchTab(CONFIG.TABS.hoTro), fetchTab(CONFIG.TABS.quyTac), fetchTab(CONFIG.TABS.form),
     ]);
-    DATA.lop      = (lop      || SAMPLE_DATA.lop).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
-    DATA.lopLink  = (lopLink  || SAMPLE_DATA.lopLink).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
-    DATA.tkb      = (tkb      || SAMPLE_DATA.tkb);
-    DATA.troGiang = (troGiang || SAMPLE_DATA.troGiang).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
-    DATA.video    = (video    || SAMPLE_DATA.video).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
-    DATA.taiLieu  = (taiLieu  || SAMPLE_DATA.taiLieu).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
-    DATA.hoTro    = (hoTro    || SAMPLE_DATA.hoTro).filter(r=>truthy(r.hien_thi));
+    // dùng dữ liệu mẫu khi: chưa cấu hình Sheet, HOẶC tải thật sự lỗi.
+    // Nếu tải THÀNH CÔNG nhưng tab đang trống (VD TaiLieu chưa ai điền) thì hiển thị
+    // đúng trạng thái RỖNG THẬT, không âm thầm thay bằng dữ liệu mẫu giả.
+    function pick(res, sampleArr){ return res.ok ? res.data : sampleArr; }
+    DATA.lop      = pick(lop, SAMPLE_DATA.lop).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.lopLink  = pick(lopLink, SAMPLE_DATA.lopLink).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.tkb      = pick(tkb, SAMPLE_DATA.tkb);
+    DATA.troGiang = pick(troGiang, SAMPLE_DATA.troGiang).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.video    = pick(video, SAMPLE_DATA.video).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.taiLieu  = pick(taiLieu, SAMPLE_DATA.taiLieu).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.hoTro    = pick(hoTro, SAMPLE_DATA.hoTro).filter(r=>truthy(r.hien_thi));
+    DATA.quyTac   = pick(quyTac, SAMPLE_DATA.quyTac).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
+    DATA.form     = pick(form, SAMPLE_DATA.form).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
 
     cleanMaLop(DATA.lop); cleanMaLop(DATA.lopLink); cleanMaLop(DATA.tkb);
 
-    const usingSample = !lop && !lopLink && !tkb && !troGiang && !video && !taiLieu && !hoTro;
-    syncDot.classList.remove('err');
-    syncText.textContent = usingSample
-      ? "Đang hiển thị dữ liệu mẫu — điền Sheet ID trong index.html để dùng dữ liệu thật"
-      : "Đã đồng bộ dữ liệu từ Google Sheet";
+    const anyTabConfigured = Object.values(CONFIG.TABS).some(tabConfigured);
+    const notConfigured = !CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0 || !anyTabConfigured;
+    const tabResults = { Lop:lop, LopLink:lopLink, TKB:tkb, TroGiang:troGiang, Video:video, TaiLieu:taiLieu, HoTro:hoTro, QuyTac:quyTac, Form:form };
+    const failedTabs = Object.keys(tabResults).filter(k=>!tabResults[k].ok);
+
+    if(notConfigured){
+      syncDot.classList.remove('err');
+      syncText.textContent = "Đang hiển thị dữ liệu mẫu — điền Sheet ID và GID từng tab trong index.html để dùng dữ liệu thật";
+    }else if(failedTabs.length===0){
+      syncDot.classList.remove('err');
+      syncText.textContent = "Đã đồng bộ dữ liệu từ Google Sheet";
+    }else if(failedTabs.length===Object.keys(tabResults).length){
+      syncDot.classList.add('err');
+      syncText.textContent = "Không tải được Google Sheet — đang hiển thị dữ liệu mẫu. Tải lại trang để thử lại.";
+    }else{
+      // chỉ một số tab lỗi — nói rõ đúng tab nào để không bị nhầm là lỗi dữ liệu
+      syncDot.classList.add('err');
+      syncText.textContent = `Lỗi tải tab: ${failedTabs.join(', ')} — các mục này đang tạm dùng dữ liệu mẫu. Tải lại trang để thử lại.`;
+    }
   }catch(e){
     Object.assign(DATA, SAMPLE_DATA);
     syncDot.classList.add('err');
@@ -593,6 +797,8 @@ async function loadAll(){
   }
 
   renderVideos();
+  renderForms();
+  renderRules();
   renderFaq();
   renderDocs();
   renderTeam();
@@ -672,27 +878,175 @@ function renderDocs(){
     </a>`).join('');
 }
 
-/* ---------- ĐỘI NGŨ HỖ TRỢ ---------- */
+/* ---------- NHÂN SỰ VẬN HÀNH ---------- */
+function splitDuties(v){
+  return String(v||'').split(/\r?\n|;/).map(s=>s.trim()).filter(Boolean);
+}
 function renderTeam(){
   const filterBar = document.getElementById('teamFilter');
-  filterBar.innerHTML = `
-    <button class="filter-btn ${teamFilterState==='tat_ca'?'active':''}" data-f="tat_ca">Tất cả</button>
-    <button class="filter-btn ${teamFilterState==='tro_giang'?'active':''}" data-f="tro_giang">Trợ giảng</button>`;
+  const grid = document.getElementById('staffGrid');
+  if(!DATA.troGiang.length){
+    filterBar.innerHTML = '';
+    grid.innerHTML = `<div class="tkb-empty form-empty">Chưa có thông tin nhân sự.</div>`;
+    return;
+  }
+  // chip lọc TỰ SINH từ cột nhom_loc trong Sheet — thêm nhóm mới ở Sheet là chip tự xuất hiện
+  const groups = [];
+  DATA.troGiang.forEach(t=>{
+    const g = (t.nhom_loc||'').trim();
+    if(g && !groups.includes(g)) groups.push(g);
+  });
+  filterBar.innerHTML =
+    `<button class="filter-btn ${teamFilterState==='tat_ca'?'active':''}" data-f="tat_ca">Tất cả</button>` +
+    groups.map(g=>`<button class="filter-btn ${teamFilterState===g?'active':''}" data-f="${g}">${g}</button>`).join('');
   filterBar.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.onclick = ()=>{ teamFilterState = btn.dataset.f; renderTeam(); };
   });
 
-  const rows = teamFilterState==='tat_ca' ? DATA.troGiang : DATA.troGiang.filter(t=>t.loai==='tro_giang');
-  const scroll = document.getElementById('teamScroll');
-  if(!rows.length){ scroll.innerHTML = `<div class="tkb-empty" style="width:100%;">Chưa có thành viên nào trong nhóm này.</div>`; return; }
-  scroll.innerHTML = rows.map(t=>`
-    <div class="card team-card">
-      <div class="team-avatar">${initials(t.ho_ten)}</div>
-      <div class="team-role">${t.vai_tro||''}</div>
-      <div class="team-name">${t.ho_ten||''}</div>
-      <div class="team-sub">${t.mon_phu_trach||''}</div>
-      <a class="team-phone" href="tel:${(t.sdt||'').replace(/\s/g,'')}">📞 ${t.sdt||'—'}</a>
-    </div>`).join('');
+  const rows = teamFilterState==='tat_ca'
+    ? DATA.troGiang
+    : DATA.troGiang.filter(t=>(t.nhom_loc||'').trim()===teamFilterState);
+
+  if(!rows.length){
+    grid.innerHTML = `<div class="tkb-empty form-empty">Chưa có ai trong nhóm này.</div>`;
+    return;
+  }
+  grid.innerHTML = rows.map(t=>{
+    const duties = splitDuties(t.nhiem_vu);
+    const tel = (t.sdt||'').replace(/\s/g,'');
+    const zalo = hasLink(t.zalo_link) ? t.zalo_link : (tel ? `https://zalo.me/${tel}` : '');
+    return `
+    <div class="card staff-card">
+      <div class="staff-top">
+        <div class="staff-avatar">${initials(t.ho_ten)}</div>
+        <div>
+          <div class="staff-role">${t.chuc_vu||''}</div>
+          <div class="staff-name">${t.ho_ten||''}</div>
+          ${t.nhom_loc?`<span class="staff-tag">${t.nhom_loc}</span>`:''}
+        </div>
+      </div>
+      ${duties.length?`<ul class="staff-duties">${duties.map(d=>`<li>${d}</li>`).join('')}</ul>`:''}
+      <div class="staff-actions">
+        ${tel?`<a class="staff-btn primary" href="tel:${tel}">📞 ${t.sdt}</a>`:''}
+        ${zalo?`<a class="staff-btn" href="${zalo}" target="_blank" rel="noopener">💬 Nhắn Zalo</a>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- QUY TẮC HỌC TẬP ---------- */
+function renderRules(){
+  const wrap = document.getElementById('ruleList');
+  if(!DATA.quyTac.length){
+    wrap.innerHTML = `<div class="tkb-empty">Chưa có nội dung quy tắc học tập.</div>`;
+    return;
+  }
+  const map = new Map();
+  DATA.quyTac.forEach(r=>{
+    const key = r.nhom || 'Quy tắc';
+    if(!map.has(key)) map.set(key, {nhom:key, mo_ta:'', rows:[]});
+    const g = map.get(key);
+    if(!g.mo_ta && r.mo_ta_nhom) g.mo_ta = r.mo_ta_nhom;
+    g.rows.push(r);
+  });
+
+  wrap.innerHTML = [...map.values()].map(g=>{
+    const quyDinh  = g.rows.filter(r=>r.loai==='quy_dinh');
+    const viPham   = g.rows.filter(r=>r.loai==='vi_pham');
+    const nhanManh = g.rows.filter(r=>r.loai==='nhan_manh');
+    return `
+    <div class="card rule-card">
+      <div class="rule-head">
+        <h3>${g.nhom}</h3>
+        ${g.mo_ta?`<p>${g.mo_ta}</p>`:''}
+      </div>
+      <div class="rule-body">
+        ${quyDinh.map(r=>`<div class="rule-item"><span class="rule-dot">●</span><span>${r.noi_dung||''}</span></div>`).join('')}
+        ${viPham.length?`
+          <div class="rule-steps">
+            <div class="rule-steps-title">⚠️ Nếu vi phạm</div>
+            ${viPham.map((r,i)=>`<div class="rule-step"><b>${i+1}</b><span>${r.noi_dung||''}</span></div>`).join('')}
+          </div>`:''}
+        ${nhanManh.map(r=>`<div class="rule-highlight">${r.noi_dung||''}</div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- HỆ THỐNG BÁO LỖI / GỬI YÊU CẦU ---------- */
+function renderForms(){
+  const chipBar = document.getElementById('formChips');
+  const grid = document.getElementById('formGrid');
+  const search = document.getElementById('formSearch');
+
+  if(search && !search.dataset.bound){
+    search.dataset.bound = "1";
+    search.addEventListener('input', ()=>{
+      formSearchQuery = search.value.trim().toLowerCase();
+      renderForms();
+    });
+  }
+
+  if(!DATA.form.length){
+    chipBar.innerHTML = '';
+    grid.innerHTML = `<div class="tkb-empty form-empty">Chưa có mục nào trong hệ thống báo lỗi.</div>`;
+    return;
+  }
+
+  // chip danh mục TỰ SINH từ cột nhom — thêm nhóm mới ở Sheet là chip tự xuất hiện
+  const cats = [];
+  DATA.form.forEach(f=>{
+    const c = (f.nhom||'').trim();
+    if(c && !cats.includes(c)) cats.push(c);
+  });
+  chipBar.innerHTML =
+    `<button class="filter-btn ${formFilterState==='tat_ca'?'active':''}" data-f="tat_ca">Tất cả</button>` +
+    cats.map(c=>`<button class="filter-btn ${formFilterState===c?'active':''}" data-f="${c}">${c}</button>`).join('');
+  chipBar.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.onclick = ()=>{ formFilterState = btn.dataset.f; renderForms(); };
+  });
+
+  let rows = formFilterState==='tat_ca'
+    ? DATA.form
+    : DATA.form.filter(f=>(f.nhom||'').trim()===formFilterState);
+
+  if(formSearchQuery){
+    rows = rows.filter(f=>{
+      const hay = [f.tieu_de, f.mo_ta, f.nhom, f.nguoi_xu_ly].join(' ').toLowerCase();
+      return hay.includes(formSearchQuery);
+    });
+  }
+
+  if(!rows.length){
+    grid.innerHTML = `<div class="tkb-empty form-empty">Không tìm thấy vấn đề nào khớp. Thử từ khoá khác, hoặc liên hệ trực tiếp bộ phận vận hành ở mục bên dưới.</div>`;
+    return;
+  }
+
+  grid.innerHTML = rows.map(f=>{
+    const okForm = hasLink(f.link_form);
+    const okTra  = hasLink(f.link_tra_cuu);
+    return `
+    <div class="card issue-card">
+      <div class="issue-top">
+        <div class="issue-icon">${f.icon||'📩'}</div>
+        <div>
+          <div class="issue-cat">${f.nhom||''}</div>
+          <div class="issue-title">${f.tieu_de||''}</div>
+        </div>
+      </div>
+      ${f.mo_ta?`<div class="issue-desc">${f.mo_ta}</div>`:''}
+      <div class="issue-meta">
+        ${f.nguoi_xu_ly?`<span>👤 Phụ trách: <b>${f.nguoi_xu_ly}</b></span>`:''}
+        ${f.thoi_gian_xu_ly?`<span>⏱ Xử lý: <b>${f.thoi_gian_xu_ly}</b></span>`:''}
+      </div>
+      <div class="issue-actions">
+        <a class="issue-btn ${okForm?'':'disabled'}" href="${okForm?f.link_form:'#'}" target="_blank" rel="noopener">
+          ${okForm?'📮 Gửi yêu cầu':'Đang cập nhật form'}
+        </a>
+        ${okTra?`<a class="issue-btn ghost" href="${f.link_tra_cuu}" target="_blank" rel="noopener">🔍 Tra cứu kết quả</a>`:''}
+      </div>
+    </div>`;
+  }).join('');
 }
 
 /* ---------- CHỌN LỚP ---------- */
@@ -704,9 +1058,9 @@ function renderClassPicker(){
     document.getElementById('tkbEmpty').textContent = 'Chưa có lớp học nào.';
     return;
   }
-  if(!selectedClass || !DATA.lop.find(l=>l.ma_lop===selectedClass)){ selectedClass = DATA.lop[0].ma_lop; }
+  if(!selectedClass || !DATA.lop.find(l=>classKey(l.ma_lop)===selectedClass)){ selectedClass = classKey(DATA.lop[0].ma_lop); }
   grid.innerHTML = DATA.lop.map(l=>`
-    <button class="class-pick ${l.ma_lop===selectedClass?'selected':''}" data-lop="${l.ma_lop}">
+    <button class="class-pick ${classKey(l.ma_lop)===selectedClass?'selected':''}" data-lop="${classKey(l.ma_lop)}">
       <div class="check">✓</div>
       <h4>${l.ten_hien_thi||l.ma_lop}</h4>
       <p>${l.mo_ta_ngan||''}${l.khai_giang?(' · Khai giảng '+l.khai_giang):''}</p>
@@ -730,10 +1084,10 @@ const THU_COLS = [
 function todayThuValue(){ const map = {0:8,1:2,2:3,3:4,4:5,5:6,6:7}; return map[new Date().getDay()]; }
 
 function renderClassDetail(){
-  const classObj = DATA.lop.find(l=>l.ma_lop===selectedClass);
+  const classObj = DATA.lop.find(l=>classKey(l.ma_lop)===selectedClass);
   document.getElementById('tkbTitle').textContent = classObj ? `Thông tin ${classObj.ten_hien_thi}` : 'Thông tin lớp';
 
-  const rows = DATA.tkb.filter(r=>r.ma_lop===selectedClass).sort(sortByThuTu);
+  const rows = DATA.tkb.filter(r=>classKey(r.ma_lop)===selectedClass).sort(sortByThuTu);
   const table = document.getElementById('tkbTable');
   const empty = document.getElementById('tkbEmpty');
   const today = todayThuValue();
@@ -773,7 +1127,7 @@ function renderClassDetail(){
 function renderClassLinks(classObj){
   const wrap = document.getElementById('classLinkGroups');
   if(!classObj){ wrap.innerHTML=''; return; }
-  const rows = DATA.lopLink.filter(l => l.ma_lop===classObj.ma_lop || (l.ma_lop||'').toUpperCase()==='ALL');
+  const rows = DATA.lopLink.filter(l => classKey(l.ma_lop)===classKey(classObj.ma_lop) || (l.ma_lop||'').toUpperCase()==='ALL');
   if(!rows.length){ wrap.innerHTML=''; return; }
 
   // gộp theo nhóm, giữ thứ tự xuất hiện
