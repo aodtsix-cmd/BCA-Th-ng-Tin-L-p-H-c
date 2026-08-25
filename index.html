@@ -342,6 +342,33 @@
   .form-empty{grid-column:1/-1;}
 
   /* ============================================================
+     12e. HƯỚNG DẪN 3 BƯỚC (chỉ đường cho học sinh)
+     ============================================================ */
+  .flow-wrap{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:26px 24px;box-shadow:var(--shadow-sm);
+  }
+  .flow-title{text-align:center;font-size:17px;font-weight:800;color:var(--green-900);font-family:'Be Vietnam Pro';}
+  .flow-sub{text-align:center;font-size:13.5px;color:var(--ink-soft);margin:6px 0 20px;}
+  .flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .flow-step{
+    display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:var(--radius-md);
+    background:var(--green-050);border:1px solid var(--border);text-decoration:none;color:inherit;
+    transition:border-color .15s, transform .15s;
+  }
+  .flow-step:hover{border-color:var(--green-500);transform:translateY(-2px);}
+  .flow-num{
+    width:28px;height:28px;border-radius:9px;background:var(--green-700);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  }
+  .flow-step.b2 .flow-num{background:var(--orange);}
+  .flow-step.b3 .flow-num{background:var(--green-900);}
+  .flow-step h4{font-size:15px;color:var(--green-900);margin:0;}
+  .flow-step p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.55;}
+  .flow-step .flow-go{margin-top:auto;padding-top:6px;font-size:12.5px;font-weight:700;color:var(--green-700);}
+  @media (max-width:760px){ .flow-grid{grid-template-columns:1fr;} }
+
+  /* ============================================================
      13. RESPONSIVE
      ============================================================ */
   @media (max-width:860px){
@@ -398,10 +425,40 @@
       <h3>Bạn cần gì lúc này?</h3>
       <p>Chọn nhanh việc cần làm, hệ thống dẫn tới đúng phần bên dưới.</p>
       <div class="hero-card-list">
-        <a class="hero-card-row" href="#bao-loi"><span>📮 Gặp lỗi? Gửi yêu cầu hỗ trợ</span><span class="pill orange">Đi tới</span></a>
         <a class="hero-card-row" href="#lich-hoc"><span>📅 Xem lịch học tuần này</span><span class="pill">Đi tới</span></a>
-        <a class="hero-card-row" href="#doi-ngu"><span>🎧 Liên hệ đúng người phụ trách</span><span class="pill muted">Đi tới</span></a>
+        <a class="hero-card-row" href="#xu-ly-su-co"><span>🛠 Xem hướng dẫn từng bước</span><span class="pill muted">Bước 1</span></a>
+        <a class="hero-card-row" href="#bao-loi"><span>📮 Báo lỗi / gửi yêu cầu</span><span class="pill orange">Bước 2</span></a>
         <a class="hero-card-row" href="#quy-tac"><span>📋 Quy tắc học trên ClassIn</span><span class="pill muted">Đi tới</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 BƯỚC KHI GẶP VẤN ĐỀ ================= -->
+<section class="section" style="padding-top:38px;padding-bottom:10px;">
+  <div class="wrap">
+    <div class="flow-wrap">
+      <div class="flow-title">Gặp vấn đề? Làm lần lượt 3 bước sau</div>
+      <div class="flow-sub">Làm đúng thứ tự sẽ được xử lý nhanh nhất. Đừng bỏ qua bước 1 — phần lớn vấn đề tự làm được ngay.</div>
+      <div class="flow-grid">
+        <a class="flow-step b1" href="#xu-ly-su-co">
+          <div class="flow-num">1</div>
+          <h4>Tự làm theo hướng dẫn</h4>
+          <p>Các việc như đăng ký tài khoản, cài ClassIn, vào thi khảo sát… đều có hướng dẫn từng bước. Làm theo là xong, không cần chờ ai.</p>
+          <div class="flow-go">Xem hướng dẫn →</div>
+        </a>
+        <a class="flow-step b2" href="#bao-loi">
+          <div class="flow-num">2</div>
+          <h4>Làm rồi vẫn không được → Gửi yêu cầu</h4>
+          <p>Chọn đúng vấn đề rồi điền form. Đây là nơi <b>duy nhất</b> để báo lỗi — báo ở đây mới được ghi nhận và xử lý theo đợt.</p>
+          <div class="flow-go">Gửi yêu cầu →</div>
+        </a>
+        <a class="flow-step b3" href="#doi-ngu">
+          <div class="flow-num">3</div>
+          <h4>Việc gấp trong buổi học → Nhắn trực tiếp</h4>
+          <p>Chỉ dùng khi cần gấp (VD đang giờ học mà không vào được lớp). Xem phần việc từng người để nhắn đúng đầu mối.</p>
+          <div class="flow-go">Xem đầu mối →</div>
+        </a>
       </div>
     </div>
   </div>
@@ -423,9 +480,9 @@
 <section class="section" id="bao-loi">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">📮 Gặp vấn đề cần xử lý?</span>
+      <span class="eyebrow">📮 BƯỚC 2 — Nơi duy nhất để báo lỗi</span>
       <h2 class="section-title">Gửi yêu cầu hỗ trợ</h2>
-      <p class="section-sub">Chọn đúng vấn đề bạn đang gặp để gửi yêu cầu. Bộ phận vận hành tổng hợp và xử lý theo đợt, bạn có thể tự tra cứu kết quả tại link tra cứu của từng mục.</p>
+      <p class="section-sub"><b>Dùng khi:</b> bạn đã làm theo hướng dẫn ở Bước 1 mà vẫn chưa được.<br>Chọn đúng vấn đề → điền form → bộ phận vận hành xử lý theo đợt trong ngày. Sau đó bấm "Tra cứu kết quả" để tự xem tình trạng, không cần nhắn hỏi lại.</p>
     </div>
     <div class="form-toolbar">
       <input class="form-search" id="formSearch" type="search" placeholder="🔍 Gõ vấn đề bạn gặp… (VD: khóa tài khoản, quên mật khẩu, sai SBD)" autocomplete="off">
@@ -439,9 +496,9 @@
 <section class="section" id="xu-ly-su-co" style="background:var(--green-050)">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">🛠 Tự kiểm tra trước</span>
-      <h2 class="section-title">Xử lý sự cố thường gặp</h2>
-      <p class="section-sub">Tự hỏi: "Mình đang gặp vấn đề gì?" — bấm đúng mục bên dưới để xem cách xử lý.</p>
+      <span class="eyebrow">🛠 BƯỚC 1 — Tự làm được ngay</span>
+      <h2 class="section-title">Hướng dẫn từng bước</h2>
+      <p class="section-sub"><b>Dùng khi:</b> bạn cần biết CÁCH LÀM một việc (đăng ký tài khoản, cài ClassIn, vào thi khảo sát…).<br>Đây là phần hướng dẫn — <b>không phải nơi báo lỗi</b>. Làm theo mà vẫn không được thì mới sang Bước 2 để gửi yêu cầu.</p>
     </div>
     <div class="faq-jump" id="faqJump"></div>
     <div class="faq-list" id="faqList"></div>
@@ -452,8 +509,9 @@
 <section class="section">
   <div class="wrap" style="max-width:760px">
     <div class="section-head">
-      <span class="eyebrow">📖 Tài liệu</span>
-      <h2 class="section-title">Tài liệu tham khảo thêm</h2>
+      <span class="eyebrow">📖 Học thêm</span>
+      <h2 class="section-title">Tài liệu &amp; kênh bổ trợ</h2>
+      <p class="section-sub">Tài liệu, sổ tay và các kênh livestream bổ trợ kiến thức ngoài giờ học chính.</p>
     </div>
     <div class="card doc-list-wrap">
       <div class="doc-list" id="docList"></div>
@@ -465,9 +523,9 @@
 <section class="section" id="doi-ngu" style="background:var(--green-050)">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">🎧 Nhắn đúng người, xử lý nhanh hơn</span>
+      <span class="eyebrow">🎧 BƯỚC 3 — Chỉ dùng khi gấp</span>
       <h2 class="section-title">Bộ phận quản lý lớp &amp; vận hành</h2>
-      <p class="section-sub">Mỗi anh/chị phụ trách một mảng riêng. Xem phần việc bên dưới để nhắn đúng người, tránh phải chuyển qua lại nhiều đầu mối.</p>
+      <p class="section-sub"><b>Dùng khi:</b> việc gấp trong buổi học, hoặc đã gửi yêu cầu ở Bước 2 quá lâu chưa được xử lý.<br>Xem phần việc của từng người để nhắn đúng đầu mối — nhắn sai người sẽ bị chuyển qua lại, chậm hơn.</p>
     </div>
     <div class="team-filter" id="teamFilter"></div>
     <div class="staff-grid" id="staffGrid"></div>
@@ -603,8 +661,9 @@ const SAMPLE_DATA = {
     {tieu_de:"Hướng dẫn sử dụng nhóm Zalo & nhận tài liệu",mo_ta:"Cách vào nhóm Zalo lớp và tải tài liệu học tập",video_url:"https://www.youtube.com/embed/dQw4w9WgXcQ",thu_tu:"2",hien_thi:"TRUE"},
   ],
   taiLieu: [
-    {tieu_de:"Sổ tay học viên BCA 2027 (bản đầy đủ)",mo_ta:"Toàn bộ quy định lớp học và lộ trình chi tiết theo từng giai đoạn",link:"#",thu_tu:"1",hien_thi:"TRUE"},
-    {tieu_de:"Bảng nội dung khóa học theo chuyên đề",mo_ta:"Danh sách chuyên đề Toán / Văn / Sử / Anh / KHTN-XH",link:"#",thu_tu:"2",hien_thi:"TRUE"},
+    {tieu_de:"Fanpage HSA Education",mo_ta:"Thông báo chung, lịch livestream bổ trợ kiến thức",link:"https://www.facebook.com/hsaeducation.com.vn",thu_tu:"1",hien_thi:"TRUE"},
+    {tieu_de:"Group kín livestream",mo_ta:"Xem livestream bổ trợ; bản ghi lại được lưu trên Website",link:"https://www.facebook.com/groups/1509555213899255",thu_tu:"2",hien_thi:"TRUE"},
+    {tieu_de:"Tiktok HSA Education",mo_ta:"Mẹo làm bài và kiến thức ngắn theo từng chuyên đề",link:"https://www.tiktok.com/@hsa.education.official",thu_tu:"3",hien_thi:"TRUE"},
   ],
   quyTac: [
     {nhom:"Nguyên tắc học trên ClassIn",mo_ta_nhom:"Để đảm bảo buổi học hiệu quả và nghiêm túc, học sinh cần tuân thủ các quy định sau",loai:"quy_dinh",noi_dung:"Bật camera, trang phục lịch sự, ngồi ngay ngắn.",thu_tu:"1",hien_thi:"TRUE"},
@@ -631,35 +690,25 @@ const SAMPLE_DATA = {
     {nhom:"Học tập",tieu_de:"Hỏi bài / thắc mắc kiến thức",mo_ta:"Câu hỏi về bài tập hoặc nội dung chưa hiểu trên lớp.",icon:"💬",link_form:"https://docs.google.com/document/d/1IV5q8sAoQu3KEeh-C8eDVyc8rlN8bRESPwaE6MJxpiA/edit?tab=t.0",link_tra_cuu:"",nguoi_xu_ly:"Hoàng Tiến Minh",thoi_gian_xu_ly:"Trong ngày",thu_tu:"11",hien_thi:"TRUE"},
   ],
   hoTro: [
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Cài đặt ClassIn",link:"",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"2",dong_loai:"link",icon:"💻",noi_dung:"Tải ClassIn cho Windows",link:"#",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"3",dong_loai:"link",icon:"🍎",noi_dung:"Tải ClassIn cho Mac",link:"#",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"4",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn chi tiết cách cài đặt ClassIn",link:"#",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"5",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Kích hoạt tài khoản & nhập học",link:"",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"6",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn kích hoạt tài khoản và nhập học",link:"#",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"7",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Làm bài tập trên ClassIn",link:"",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"8",dong_loai:"link",icon:"📄",noi_dung:"Hướng dẫn làm bài tập trên ClassIn",link:"#",hien_thi:"TRUE"},
-    {muc_id:"1",muc_thu_tu:"1",muc_tieu_de:"CHƯA CÀI CLASSIN / CHƯA VÀO ĐƯỢC LỚP",muc_mau:"xanh_duong",thu_tu:"9",dong_loai:"luu_y",icon:"",noi_dung:"✅ Sau khi hoàn thành đủ 3 bước trên, hệ thống sẽ tự thêm bạn vào lớp — không cần thao tác gì thêm. Thời gian xử lý: 12–24 giờ.",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_tieu_de:"ĐĂNG KÝ & KÍCH HOẠT TÀI KHOẢN WEBSITE",muc_mau:"xanh_duong",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Truy cập hsavnu.edu.vn và tạo tài khoản bằng email của bạn.",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_tieu_de:"ĐĂNG KÝ & KÍCH HOẠT TÀI KHOẢN WEBSITE",muc_mau:"xanh_duong",thu_tu:"2",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Mở email đã đăng ký để lấy mã kích hoạt. Nếu không thấy, kiểm tra kỹ mục Spam và Quảng cáo (Promotions).",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_tieu_de:"ĐĂNG KÝ & KÍCH HOẠT TÀI KHOẢN WEBSITE",muc_mau:"xanh_duong",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Vào mục Khóa học → chọn đúng lớp đã đăng ký → mở 1 buổi học bất kỳ → dán mã kích hoạt vào.",link:"",hien_thi:"TRUE"},
+    {muc_id:"1",muc_tieu_de:"ĐĂNG KÝ & KÍCH HOẠT TÀI KHOẢN WEBSITE",muc_mau:"xanh_duong",thu_tu:"4",dong_loai:"luu_y",icon:"",noi_dung:"📌 Mã kích hoạt chỉ nhập 1 LẦN DUY NHẤT. Những lần sau chỉ cần đăng nhập là học được ngay. Xem video hướng dẫn ở đầu trang nếu cần nhìn thao tác cụ thể.",link:"",hien_thi:"TRUE"},
 
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 1: Không còn sử dụng được email cũ",link:"",hien_thi:"TRUE"},
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"2",dong_loai:"link",icon:"📝",noi_dung:"Điền Form đổi email (lớp BCA)",link:"#",hien_thi:"TRUE"},
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 2: Muốn kiểm tra yêu cầu đổi email đã được xử lý chưa",link:"",hien_thi:"TRUE"},
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"4",dong_loai:"link",icon:"📊",noi_dung:"Danh sách trạng thái đổi email (lớp BCA)",link:"#",hien_thi:"TRUE"},
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"5",dong_loai:"buoc",icon:"",noi_dung:"Trường hợp 3: Không biết mình đã được thêm vào ClassIn chưa",link:"",hien_thi:"TRUE"},
-    {muc_id:"2",muc_thu_tu:"2",muc_tieu_de:"LỖI EMAIL / MUỐN ĐỔI EMAIL CLASSIN",muc_mau:"cam",thu_tu:"6",dong_loai:"link",icon:"📊",noi_dung:"Kiểm tra danh sách đã thêm vào ClassIn",link:"#",hien_thi:"TRUE"},
+    {muc_id:"2",muc_tieu_de:"CÀI CLASSIN & VÀO LỚP HỌC",muc_mau:"cam",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Tải và cài phần mềm ClassIn về máy tính hoặc điện thoại.",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_tieu_de:"CÀI CLASSIN & VÀO LỚP HỌC",muc_mau:"cam",thu_tu:"2",dong_loai:"link",icon:"📌",noi_dung:"Hướng dẫn tạo tài khoản ClassIn (có ảnh từng bước)",link:"https://docs.google.com/document/d/1awsiDb2t1PfJ2EY3NwaC8vgFS9ESdGKG_zZ4wwtnv-Y/edit?tab=t.0",hien_thi:"TRUE"},
+    {muc_id:"2",muc_tieu_de:"CÀI CLASSIN & VÀO LỚP HỌC",muc_mau:"cam",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Tạo tài khoản ClassIn bằng ĐÚNG email đã đăng ký khóa học.",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_tieu_de:"CÀI CLASSIN & VÀO LỚP HỌC",muc_mau:"cam",thu_tu:"4",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Chờ Quản lý lớp thêm bạn vào lớp — mất khoảng 24–48 giờ. Trong thời gian này bạn không cần làm gì thêm.",link:"",hien_thi:"TRUE"},
+    {muc_id:"2",muc_tieu_de:"CÀI CLASSIN & VÀO LỚP HỌC",muc_mau:"cam",thu_tu:"5",dong_loai:"luu_y",icon:"",noi_dung:"⏰ Quá 48 giờ vẫn chưa thấy lớp, HOẶC muốn đổi email ClassIn → sang mục \"Gửi yêu cầu hỗ trợ\" phía trên để báo, đừng chờ tiếp.",link:"",hien_thi:"TRUE"},
 
-    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Có thắc mắc về bài tập, chưa hiểu kiến thức trên lớp, hoặc cần giáo viên hỗ trợ:",link:"",hien_thi:"TRUE"},
-    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"2",dong_loai:"link",icon:"💬",noi_dung:"Link hỏi đáp bài tập chung",link:"#",hien_thi:"TRUE"},
-    {muc_id:"3",muc_thu_tu:"3",muc_tieu_de:"HỎI BÀI / THẮC MẮC HỌC TẬP",muc_mau:"xanh_la",thu_tu:"3",dong_loai:"luu_y",icon:"",noi_dung:"Một số lớp có thêm nhóm hỏi đáp riêng — xem trong mục \"Bạn thuộc lớp nào?\" phía dưới để lấy đúng link của lớp bạn.",link:"",hien_thi:"TRUE"},
+    {muc_id:"3",muc_tieu_de:"LÀM BÀI THI KHẢO SÁT HÀNG THÁNG",muc_mau:"xanh_la",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Đăng nhập tài khoản trên website hsavnu.edu.vn.",link:"",hien_thi:"TRUE"},
+    {muc_id:"3",muc_tieu_de:"LÀM BÀI THI KHẢO SÁT HÀNG THÁNG",muc_mau:"xanh_la",thu_tu:"2",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Vào mục Khóa học → chọn đúng lớp bạn đang học.",link:"",hien_thi:"TRUE"},
+    {muc_id:"3",muc_tieu_de:"LÀM BÀI THI KHẢO SÁT HÀNG THÁNG",muc_mau:"xanh_la",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Cuộn xuống cuối trang, tìm mục ĐỀ THI KHẢO SÁT HÀNG THÁNG rồi chọn bài thi.",link:"",hien_thi:"TRUE"},
+    {muc_id:"3",muc_tieu_de:"LÀM BÀI THI KHẢO SÁT HÀNG THÁNG",muc_mau:"xanh_la",thu_tu:"4",dong_loai:"luu_y",icon:"",noi_dung:"⚠️ Nếu bài thi tự nộp hoặc tự nhảy phần: nguyên nhân do lệch múi giờ thiết bị. Vào Cài đặt máy → chỉnh múi giờ về Hà Nội/Bangkok (GMT+7) rồi thi lại.",link:"",hien_thi:"TRUE"},
 
-    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"1",dong_loai:"link",icon:"🔒",noi_dung:"Link điền xin mở khóa tài khoản",link:"#",hien_thi:"TRUE"},
-    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"2",dong_loai:"link",icon:"🔍",noi_dung:"Link tra cứu trạng thái tài khoản",link:"#",hien_thi:"TRUE"},
-    {muc_id:"4",muc_thu_tu:"4",muc_tieu_de:"TÀI KHOẢN CLASSIN BỊ KHÓA",muc_mau:"do",thu_tu:"3",dong_loai:"luu_y",icon:"",noi_dung:"⏰ Thời gian xử lý mở khóa: Thứ 2 · Thứ 4 · Thứ 6 · Chủ nhật — vào khoảng 22:00 các ngày trên.",link:"",hien_thi:"TRUE"},
-
-    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Chờ khoảng 1–3 giờ để hệ thống cập nhật.",link:"",hien_thi:"TRUE"},
-    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"2",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Kiểm tra hộp thư Spam và mục Quảng cáo (Promotions).",link:"",hien_thi:"TRUE"},
-    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"3",dong_loai:"buoc",icon:"",noi_dung:"Bước 3. Nếu vẫn chưa thấy, liên hệ kênh hỗ trợ để được kiểm tra.",link:"",hien_thi:"TRUE"},
-    {muc_id:"5",muc_thu_tu:"5",muc_tieu_de:"MỚI ĐĂNG KÝ NHƯNG CHƯA NHẬN ĐƯỢC TÀI KHOẢN",muc_mau:"tim",thu_tu:"4",dong_loai:"luu_y",icon:"",noi_dung:"📩 Email tài khoản thường rơi vào mục Quảng cáo/Spam. Hãy kiểm tra kỹ hai mục này trước khi báo hỗ trợ nhé!",link:"",hien_thi:"TRUE"},
+    {muc_id:"4",muc_tieu_de:"XEM LẠI BÀI GIẢNG & LẤY TÀI LIỆU",muc_mau:"tim",thu_tu:"1",dong_loai:"buoc",icon:"",noi_dung:"Bước 1. Đăng nhập hsavnu.edu.vn → vào mục Khóa học → chọn lớp của bạn.",link:"",hien_thi:"TRUE"},
+    {muc_id:"4",muc_tieu_de:"XEM LẠI BÀI GIẢNG & LẤY TÀI LIỆU",muc_mau:"tim",thu_tu:"2",dong_loai:"buoc",icon:"",noi_dung:"Bước 2. Chọn đúng buổi học cần xem lại — video record và tài liệu của buổi đó nằm ngay trong buổi học.",link:"",hien_thi:"TRUE"},
+    {muc_id:"4",muc_tieu_de:"XEM LẠI BÀI GIẢNG & LẤY TÀI LIỆU",muc_mau:"tim",thu_tu:"3",dong_loai:"luu_y",icon:"",noi_dung:"📌 Video và tài liệu được cập nhật liên tục sau mỗi buổi. Nếu buổi vừa học chưa thấy video, chờ thêm ít giờ rồi tải lại trang.",link:"",hien_thi:"TRUE"},
   ],
 };
 
@@ -680,6 +729,16 @@ function cleanMaLop(rows){
   rows.forEach(r=>{ if('ma_lop' in r) r.ma_lop = normId(r.ma_lop); });
   return rows;
 }
+/* Loại bỏ DÒNG CHẮN (ma_lop bắt đầu bằng "__", VD __BOQUA__).
+   Dòng chắn được đặt ngay dưới hàng tiêu đề trong Sheet để "hứng" lỗi hiếm gặp của Google
+   (thỉnh thoảng nuốt mất dòng dữ liệu đầu tiên). Nếu Google có nuốt thì nuốt đúng dòng này,
+   dữ liệu lịch học thật phía dưới vẫn còn nguyên. */
+function boDongChan(rows){
+  return rows.filter(r=>{
+    const v = normId(r && r.ma_lop).toUpperCase();
+    return v.indexOf('__') !== 0;
+  });
+}
 /* So khớp mã lớp KHÔNG phân biệt hoa/thường, khoảng trắng, hay kiểu gạch ngang
    (TH01 - 2K9 / TH01-2K9 / th01–2k9 đều được coi là cùng 1 lớp). Chỉ dùng để SO KHỚP,
    không dùng để hiển thị — hiển thị vẫn lấy nguyên ma_lop gốc. */
@@ -690,7 +749,7 @@ function hasLink(v){ return !!(v && String(v).trim() && String(v).trim()!=="#");
 function sortByThuTu(a,b){ return (parseFloat(a.thu_tu)||0) - (parseFloat(b.thu_tu)||0); }
 function initials(name){ return (name||"?").trim().split(/\s+/).slice(-2).map(w=>w[0]).join("").toUpperCase(); }
 function iconForNhom(n){
-  const map = {"Zalo học sinh":"💬","Zalo phụ huynh":"👪","Kích hoạt khóa học":"🔑","Hỏi đáp trợ giảng":"❓","Livestream":"🎥"};
+  const map = {"Zalo học sinh":"💬","Zalo phụ huynh":"👪","Kích hoạt khóa học":"🔑","Hỏi đáp trợ giảng":"❓"};
   return map[n] || "🔗";
 }
 /* Tự nhận diện mọi kiểu link YouTube (dán nguyên link chia sẻ cũng được, không bắt buộc /embed/ nữa):
@@ -770,6 +829,9 @@ async function loadAll(){
     DATA.form     = pick(form, SAMPLE_DATA.form).filter(r=>truthy(r.hien_thi)).sort(sortByThuTu);
 
     cleanMaLop(DATA.lop); cleanMaLop(DATA.lopLink); cleanMaLop(DATA.tkb);
+    DATA.lop = boDongChan(DATA.lop);
+    DATA.lopLink = boDongChan(DATA.lopLink);
+    DATA.tkb = boDongChan(DATA.tkb);
 
     const anyTabConfigured = Object.values(CONFIG.TABS).some(tabConfigured);
     const notConfigured = !CONFIG.SHEET_ID || CONFIG.SHEET_ID.indexOf("DAN_SHEET_ID")===0 || !anyTabConfigured;
